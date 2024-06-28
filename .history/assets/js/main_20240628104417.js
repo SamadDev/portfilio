@@ -8,6 +8,7 @@ navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("nav__menu--open");
   changeIcon();
 });
+});
 
 // close the menu when the user clicks the nav links
 navItem.forEach((item) => {
@@ -67,9 +68,9 @@ window.addEventListener("scroll", () => {
 
 // ScrollReveal animations
 const sr = ScrollReveal({
-  duration: 2000,
+  duration: 1000,
   distance: "100px",
-  delay: 400,
+  delay: 200,
   reset: false,
 });
 
@@ -79,8 +80,8 @@ sr.reveal(".hero__img", { origin: "top" });
 sr.reveal(
   ".hero__info-wrapper, .skills__title, .skills__content, .qualification__name, .qualification__item, .service__card, .project__content, .testimonial__wrapper, .footer__content",
   {
-    delay: 500,
-    interval: 100,
+    delay: 200,
+    interval: 50,
   }
 );
 
