@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <!--=================== Google Fonts ====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!--=================== Remixicons ====================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=================== SwiperJS CSS ====================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+
+    <!--=================== Main CSS ====================-->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body>
+
+    <!--=================== Header ====================-->
+    <header id="header" class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav__brand">
+                    <i class="ri-code-s-slash-line"></i>Developer
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#hero" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#skills" class="nav__link">skills</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#qualification" class="nav__link">Qualification</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#project" class="nav__link">Projects</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#footer" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav__toggle">
+                    <i id="nav-toggle" class="ri-menu-3-line"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--=================== main ====================-->
+    <main class="main">
+        <!--=================== Hero ====================-->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="d-grid hero__wrapper">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Hi, I am Samad,<br>Mobile Developer.</h1>
+                        <p class="hero__description">Graduate of Software engineering with over 4 Years of experience
+                            learning and working across the front-end of mobile application with Flutter and 2 Years of
+                            with NodeJS. I have built 5+ projects on 3 teams and am looking for a role with mobile
+                            development where I can grow and continue to learn from other experienced team members.</p>
+                        <div class="hero__info">
+                            <div class="hero__info-wrapper">
+                                <p class="hero__info-number">05</p>
+                                <h2 class="hero__info-title">Years<br>Experience</h2>
+                            </div>
+                            <div class="hero__info-wrapper">
+                                <p class="hero__info-number">10+</p>
+                                <h2 class="hero__info-title">Projects<br>Completed</h2>
+                            </div>
+                            <div class="hero__info-wrapper">
+                                <p class="hero__info-number">03+</p>
+                                <h2 class="hero__info-title">Companies<br> Worked</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="assets/img/samad.png" alt="Dave" class="hero__img">
+                </div>
+            </div>
+        </section>
+
+
+        <section id="skills" class="section skills">
+
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">skills</h2>
+                    <span class="section__subtitle">Technologies I've been working with:</span>
+                </div>
+
+                <div class="skillsContainer container">
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/flutter-icon.png?alt=media&token=86feec2c-7a6e-4a8a-8f2e-aa552f7f8566"
+                            alt="Flutter">
+                        <h3 style="color: rgb(33, 33, 33);">Flutter</h3>
+                    </div>
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/dart-programming-language-icon.png?alt=media&token=d0fc5500-842b-4991-8385-db3829d81fa3"
+                            alt="Dart">
+                        <h3 style="color: rgb(33, 33, 33);">Dart</h3>
+                    </div>
+
+
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/node-js.png?alt=media&token=479c045f-cc54-42f0-bc88-cf4021b821af"
+                            alt="Node">
+                        <h3 style="color: rgb(33, 33, 33);">Node</h3>
+                    </div>
+
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/firebase-svgrepo-com.svg?alt=media&token=870da2ba-60d0-434e-b04e-1d265ef73072"
+                            alt="Firebase">
+                        <h3 style="color: rgb(33, 33, 33);">Firebase</h3>
+                    </div>
+
+
+
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/mongodb-icon.png?alt=media&token=0a80edd0-e6e2-4282-be10-786a1295a654"
+                            alt="Mongodb">
+                        <h3 style="color: rgb(33, 33, 33);">Mongodb</h3>
+                    </div>
+
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/express-js-icon.png?alt=media&token=762ea447-57a2-42e0-89bd-61acad6b53fe"
+                            alt="Express">
+                        <h3 style="color: rgb(33, 33, 33);">Express</h3>
+                    </div>
+
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/mongoose-Photoroom.png?alt=media&token=a311f6f6-0d6e-4faa-bba0-267bac48863d"
+                            alt="Mongoose">
+                        <h3 style="color: rgb(33, 33, 33);">Mongoose</h3>
+                    </div>
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/html-icon.png?alt=media&token=b0b9fe0e-97df-4a8d-ba0c-6c79f95d40b5"
+                            alt="HTML">
+                        <h3 style="color: rgb(33, 33, 33);">HTML</h3>
+                    </div>
+                    <div class="skill--box"
+                        style="background-color: rgb(234, 234, 234); box-shadow: rgba(84, 95, 196, 0.3) 0px 0px 30px;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/raasalmal.appspot.com/o/code%20(1).png?alt=media&token=6e2bb475-c59f-45a4-af6c-c57edb2b3787"
+                            alt="Git">
+                        <h3 style="color: rgb(33, 33, 33);">Git</h3>
+                    </div>
+
+                </div>
+
+        </section>
+
+
+
+        <!--=================== Qualification ====================-->
+        <section id="qualification" class="section qualification">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Qualification</h2>
+                    <span class="section__subtitle">Experience & Education</span>
+                </div>
+                <!--============== Professional Experience ============-->
+                <div class="qualification__wrapper">
+                    <h3 class="qualification__name">
+                        <i class="ri-briefcase-fill"></i>
+                        Professional Experience
+                    </h3>
+                    <div class="d-grid qualification__content">
+                        <!-- Experience 1-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">MOBILE APPLICATION DEVELOPER</h3>
+                            <p class="qualification__description">Flutter Developer from Durandaz company working as
+                                mobile application developer for internship.</p>
+                            <span class="qualification__date">1-7-2020 - 1-10-2020</span>
+                        </div>
+                        <!-- Experience 2-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">IT & MOBILE DEVELOPER</h3>
+                            <p class="qualification__description">IT support and mobile application developer from
+                                SuperHero company managed the company website
+                                developed the mobile application.</p>
+                            <span class="qualification__date">1-6-2021 - 1-10-2021</span>
+                        </div>
+                        <!-- Experience 3-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">MOBILE APPLICATION DEVELOPER</h3>
+                            <p class="qualification__description">Flutter Developer from Jiasaz company working on
+                                mobile application application project..</p>
+                            <span class="qualification__date">1-12-2022 - Present</span>
+                        </div>
+                        <!-- Experience 4-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">MOBILE APPLICATION DEVELOPER</h3>
+                            <p class="qualification__description">Flutter Developer from Dotteck company working on
+                                mobile application application project as remote part time..</p>
+                            <span class="qualification__date">1-2-2024 - Present</span>
+                        </div>
+                    </div>
+                </div>
+                <!--============== Education ============-->
+                <div class="qualification__wrapper">
+                    <h3 class="qualification__name">
+                        <i class="ri-booklet-fill"></i>
+                        Education
+                    </h3>
+                    <div class="d-grid qualification__content">
+                        <!-- Education 1-->
+
+                        <!-- Education 2-->
+                        <!-- <div class="qualification__item">
+                                <h3 class="qualification__title">school education</h3>
+                                <p class="qualification__description"> equipped with foundational knowledge and skills
+                                    to pursue future endeavors..</p>
+                                <span class="qualification__date">2014 - 2016</span>
+                            </div> -->
+                        <!-- Education 3-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Software Engineer</h3>
+                            <p class="qualification__description">Lorem ipsum dolor sit amet consectetur.
+                                Facilisi vitae bibendum praesent sodales
+                                urna vel molestie neque augue.</p>
+                            <span class="qualification__date">2017 - 2021</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+        <!--=================== Projects ====================-->
+        <section id="project" class="section project">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Projects</h2>
+                    <span class="section__subtitle">My recent work</span>
+                </div>
+                <div class="d-grid project__wrapper">
+
+                    <!--============== project 1 =============-->
+                    <div class="project__content ">
+                        <div class="zstack">
+                            <img src="assets/img/e_banner.png" alt="Eagle Express" class="project__img">
+                            <img src="assets/img/eagle.png" alt="Eagle Express" class="project__icon">
+                        </div>
+                        <h3 class="project__title">Eagle Express</h3>
+                        <p class="project__description">Eagle Express is designed with pure state management,Eagle
+                            Express simplifies Express processes </p>
+
+                        </a>
+                        <div>
+                            <a href="https://apps.apple.com/app/id1551353775" class="storeLink"><img
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"></a>
+
+                            <a href='https://play.google.com/store/apps/details?id=com.stagescycling.stages'
+                                class="storeLink"><img alt='Get it on Google Play'
+                                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+                                    style="--width: 128%" ; /></a>
+
+                        </div>
+
+                    </div>
+                    <!--============== project 2 =============-->
+                    <div class="project__content ">
+                        <div class="zstack">
+                            <img src="assets/img/r_banner.png" alt="Rasalmal" class="project__img">
+                            <img src="assets/img/rasalmal.png" alt="Rasalmal" class="project__icon">
+                        </div>
+                        <h3 class="project__title">Rasalmal</h3>
+                        <p class="project__description">Rasalmal is designed with pure state management,Rasalmal
+                            simplifies real estate.</p>
+
+                        </a>
+                        <div>
+
+                            <a href="https://apps.apple.com/app/id1551353775" class="storeLink"><img
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"></a>
+
+                            <a href='https://play.google.com/store/apps/details?id=com.stagescycling.stages'
+                                class="storeLink"><img alt='Get it on Google Play'
+                                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+                                    style="--width: 128%" ; /></a>
+
+                        </div>
+
+                    </div>
+
+                    <!--============== project 3 =============-->
+                    <div class="project__content ">
+                        <div class="zstack">
+                            <img src="assets/img/m_banner.png" alt="Mandubi" class="project__img">
+                            <img src="assets/img/mandubi.png" alt="Mandubi" class="project__icon">
+                        </div>
+                        <h3 class="project__title">Mandubi</h3>
+                        <p class="project__description">Mandubi is full sass application with subscription,Mandubi for
+                            both company and mandubin staff.</p>
+
+                        </a>
+                        <div>
+
+
+
+                            <a href="https://apps.apple.com/app/id1551353775" class="storeLink"><img
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"></a>
+
+                            <a href='https://play.google.com/store/apps/details?id=com.stagescycling.stages'
+                                class="storeLink"><img alt='Get it on Google Play'
+                                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+                                    style="--width: 128%" ; /></a>
+
+                        </div>
+
+                    </div>
+
+                    <!--============== project 4 =============-->
+                    <div class="project__content ">
+                        <div class="zstack">
+                            <img src="assets/img/k_banner.png" alt="Kal" class="project__img">
+                            <img src="assets/img/kall.png" alt="Kal" class="project__icon">
+                        </div>
+                        <h3 class="project__title">Kal</h3>
+                        <p class="project__description">Kal is designed with pure state management,Kal simplifies cargo
+                            and shipment processes for both customers and logistics clients.</p>
+
+                        </a>
+                        <div>
+                            <a href="https://apps.apple.com/app/id1551353775" class="storeLink"><img
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"></a>
+
+                            <a href='https://play.google.com/store/apps/details?id=com.stagescycling.stages'
+                                class="storeLink"><img alt='Get it on Google Play'
+                                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+                                    style="--width: 128%" ; /></a>
+
+                        </div>
+
+                    </div>
+
+                    <!--============== project 4 =============-->
+                    <div class="project__content ">
+                        <div class="zstack">
+                            <img src="assets/img/w_banner.png" alt="ۆڵپی" class="project__img">
+                            <img src="assets/img/walpy.jpg" alt="Agency Website" class="project__icon">
+                        </div>
+                        <h3 class="project__title">ۆڵپی</h3>
+                        <p class="project__description">A complete gallery of pictures videos and Quotes in three
+                            languages Kurdish Arabic and Englishp</p>
+
+                        </a>
+                        <div>
+
+
+                            <style>
+                                .storeLink {
+                                    margin-right: 150;
+                                    margin-left: 150;
+                                    position: relative;
+                                    display: inline-block;
+                                    width: 100px;
+                                    height: 50px;
+                                    padding-right: 15px;
+                                    padding-left: 15px;
+                                    border-radius: 0.7rem;
+                                    overflow: hidden;
+                                }
+
+                                .storeLink:hover {
+                                    border-radius: 0.7rem;
+                                    /* animation: shadowChange 1.5s infinite alternate; */
+                                    transform: scale(1.05) !important;
+                                }
+
+                                .storeLink>img {
+                                    --width: 100%;
+                                    height: 100%;
+                                    position: absolute;
+                                    width: var(--width);
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            </style>
+
+                            <!-- <a href="https://apps.apple.com/app/id1551353775" class="storeLink"><img
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"></a> -->
+
+                            <a href='https://play.google.com/store/apps/details?id=com.stagescycling.stages'
+                                class="storeLink"><img alt='Get it on Google Play'
+                                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+                                    style="--width: 128%" ; /></a>
+
+                        </div>
+
+                    </div>
+
+                    <!--============== project 5 =============-->
+                    <div class="project__content ">
+                        <div class="zstack">
+                            <img src="assets/img/f_banner.png" alt="Futian" class="project__img">
+                            <img src="assets/img/futian.png" alt="Futian" class="project__icon">
+                        </div>
+                        <h3 class="project__title">Futian</h3>
+                        <p class="project__description">Futian is designed with pure state management,Futian simplifies
+                            cargo and shipment processes for both customers and logistics clients.</p>
+
+                        </a>
+                        <div>
+                            <a href="https://apps.apple.com/app/id1551353775" class="storeLink"><img
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"></a>
+
+                            <a href='https://play.google.com/store/apps/details?id=com.stagescycling.stages'
+                                class="storeLink"><img alt='Get it on Google Play'
+                                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+                                    style="--width: 128%" ; /></a>
+
+                        </div>
+
+                    </div>
+
+                    <!--============== project 4 =============-->
+                    <div class="project__content ">
+                        <div class="zstack">
+                            <img src="assets/img/o_banner.png" alt="O2" class="project__img">
+                            <img src="assets/img/logo.png" alt="O2" class="project__icon">
+                        </div>
+                        <h3 class="project__title">O2</h3>
+                        <p class="project__description">Private simple inventory system for store management for both user admin and store users .</p>
+
+                        </a>
+                        <div>
+
+
+<!-- 
+                            <a href="https://apps.apple.com/app/id1551353775" class="storeLink"><img
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"></a>
+
+                            <a href='https://play.google.com/store/apps/details?id=com.stagescycling.stages'
+                                class="storeLink"><img alt='Get it on Google Play'
+                                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+                                    style="--width: 128%" ; /></a> -->
+
+                        </div>
+                 
+
+                    </div>
+
+                       <!--============== project 4 =============-->
+                       <div class="project__content ">
+                        <div class="zstack">
+                            <img src="assets/img/l_banner.png" alt="London Glass" class="project__img">
+                            <img src="assets/img/london.jpg" alt="London Glass" class="project__icon">
+                        </div>
+                        <h3 class="project__title">London Glass</h3>
+                        <p class="project__description">Private company rec.</p>
+
+                        </a>
+                        <div>
+
+
+<!-- 
+                            <a href="https://apps.apple.com/app/id1551353775" class="storeLink"><img
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"></a>
+
+                            <a href='https://play.google.com/store/apps/details?id=com.stagescycling.stages'
+                                class="storeLink"><img alt='Get it on Google Play'
+                                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+                                    style="--width: 128%" ; /></a> -->
+
+                        </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+    </main>
+    <!--=================== footer ====================-->
+    <footer id="footer" class="foter">
+        <div class="container">
+            <div class="d-grid footer__wrapper">
+                <div class="footer__content">
+                    <h4 class="footer__title">More</h4>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a href="www.linkedin.com/in/samad-shukr-34a7491aa" class="footer__social-link">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                        </li>
+                        <!-- <li class="footer__social-item">
+                            <a href="https://www.instagram.com" class="footer__social-link">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </li> -->
+                        <li class="footer__social-item">
+                            <a href="www.linkedin.com/in/samad-shukr-34a7491aa" class="footer__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="https://github.com/SamadDev" class="footer__social-link">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__content">
+                    <h4 class="footer__title">Email Me</h4>
+
+                    <a class="footer__contact"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=samad.00293265@gmail.com&cc=someone@ola.example&bcc=samad.00293265@gmail.com&su=SUBJECT&body=BODY"
+                        target="_blank">samad.00293265@gmail.com </a>
+
+                </div>
+                <div class="footer__content">
+                    <h4 class="footer__title">Call Me</h4>
+                    <a href="https://wa.me/9647810520687" class="footer__contact">(964) 781 052 06 87</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=================== SwiperJS  ====================-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!--=================== ScrollReveal ==================-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--=================== Main JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
