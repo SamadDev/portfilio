@@ -182,17 +182,21 @@ document.querySelectorAll('.project__content').forEach(card => {
   
   card.addEventListener('mouseenter', (e) => {
     isHovering = true;
-    card.style.transform = 'translateY(-20px) scale(1.02) rotateX(3deg)';
-    card.style.filter = 'brightness(1.08) contrast(1.1) saturate(1.2)';
+    card.style.transform = 'translateY(-25px) scale(1.03) rotateX(5deg) rotateY(2deg)';
+    card.style.filter = 'brightness(1.15) contrast(1.2) saturate(1.4) hue-rotate(10deg)';
+    card.style.clipPath = 'polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)';
     
-    // Add new modern glow effect
+    // Add innovative glow effect
     card.style.boxShadow = `
-      0 40px 80px rgba(37, 171, 117, 0.3), 
-      0 25px 50px rgba(0, 212, 255, 0.2),
-      0 15px 30px rgba(102, 126, 234, 0.15),
-      0 0 0 2px rgba(37, 171, 117, 0.4),
-      inset 0 2px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -2px 0 rgba(0, 0, 0, 0.1)
+      0 50px 100px rgba(37, 171, 117, 0.4), 
+      0 30px 60px rgba(0, 212, 255, 0.3),
+      0 20px 40px rgba(102, 126, 234, 0.2),
+      0 10px 20px rgba(240, 147, 251, 0.15),
+      0 0 0 3px rgba(37, 171, 117, 0.5),
+      inset 0 3px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -3px 0 rgba(0, 0, 0, 0.2),
+      inset 3px 0 0 rgba(37, 171, 117, 0.4),
+      inset -3px 0 0 rgba(0, 212, 255, 0.3)
     `;
   });
   
@@ -221,10 +225,10 @@ document.querySelectorAll('.project__content').forEach(card => {
     const rotateY = (centerX - x) / 10;
     
     card.style.transform = `
-      translateY(-20px) 
-      scale(1.02) 
-      rotateX(${3 + rotateX}deg) 
-      rotateY(${rotateY}deg)
+      translateY(-25px) 
+      scale(1.03) 
+      rotateX(${5 + rotateX}deg) 
+      rotateY(${2 + rotateY}deg)
     `;
   });
   
