@@ -125,17 +125,49 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(37, 171, 117, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(37, 171, 117, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(240, 147, 251, 0.08) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
   animation: backgroundShift 20s ease-in-out infinite;
 }
 
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    conic-gradient(from 0deg at 50% 50%, 
+      rgba(37, 171, 117, 0.1) 0deg,
+      rgba(0, 212, 255, 0.1) 90deg,
+      rgba(102, 126, 234, 0.1) 180deg,
+      rgba(240, 147, 251, 0.1) 270deg,
+      rgba(37, 171, 117, 0.1) 360deg);
+  pointer-events: none;
+  z-index: -1;
+  animation: conicRotate 30s linear infinite;
+  opacity: 0.3;
+}
+
 @keyframes backgroundShift {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1) rotate(0deg);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.1) rotate(2deg);
+  }
+}
+
+@keyframes conicRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Reusable CSS
@@ -545,16 +577,21 @@ body::before {
   margin-bottom: 5rem;
   padding: 0;
   justify-self: center;
-  background: rgba(26, 26, 26, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: 
+    linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(42, 42, 42, 0.8) 100%);
+  backdrop-filter: blur(25px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
   position: relative;
   transform-style: preserve-3d;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .project__content::before {
@@ -575,22 +612,44 @@ body::before {
 }
 
 .project__content:hover {
-  transform: translateY(-12px) scale(1.03) rotateX(5deg);
+  transform: translateY(-15px) scale(1.05) rotateX(8deg) rotateY(5deg);
   box-shadow: 
-    0 25px 50px rgba(37, 171, 117, 0.3), 
-    0 15px 35px rgba(0, 212, 255, 0.2),
-    0 8px 32px rgba(0, 0, 0, 0.4);
-  border-color: rgba(37, 171, 117, 0.4);
-  animation: cardFloat 2s ease-in-out infinite;
+    0 30px 60px rgba(37, 171, 117, 0.4), 
+    0 20px 40px rgba(0, 212, 255, 0.3),
+    0 10px 20px rgba(102, 126, 234, 0.2),
+    0 0 0 1px rgba(37, 171, 117, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(37, 171, 117, 0.5);
+  animation: cardFloat 3s ease-in-out infinite;
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.project__content:hover::before {
+  opacity: 1;
+  background: 
+    linear-gradient(135deg, 
+      rgba(37, 171, 117, 0.2) 0%, 
+      rgba(0, 212, 255, 0.15) 50%,
+      rgba(102, 126, 234, 0.1) 100%);
 }
 
 @keyframes cardFloat {
-  0%, 100% { transform: translateY(-12px) scale(1.03) rotateX(5deg); }
-  50% { transform: translateY(-15px) scale(1.04) rotateX(3deg); }
+  0%, 100% { 
+    transform: translateY(-15px) scale(1.05) rotateX(8deg) rotateY(5deg);
+    filter: brightness(1.1) contrast(1.05);
+  }
+  50% { 
+    transform: translateY(-20px) scale(1.06) rotateX(6deg) rotateY(3deg);
+    filter: brightness(1.15) contrast(1.1);
+  }
 }
 
 .project__content:hover .project__img {
-  transform: scale(1.05);
+  transform: scale(1.08) rotateX(5deg);
+  filter: brightness(1.1) contrast(1.2) saturate(1.3) hue-rotate(5deg);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .project__content:hover .project__icon {
@@ -603,9 +662,10 @@ body::before {
   height: 16rem;
   width: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   z-index: 2;
+  filter: brightness(0.9) contrast(1.1) saturate(1.1);
 }
 
 .project__icon {
@@ -950,7 +1010,41 @@ body.loaded .project__content {
 /* Advanced hover states with reduced motion support */
 @media (prefers-reduced-motion: no-preference) {
   .project__content:hover {
-    animation: cardFloat 2s ease-in-out infinite;
+    animation: cardFloat 3s ease-in-out infinite;
+  }
+  
+  /* Cutting-edge particle effects */
+  .project__content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(37, 171, 117, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .project__content:hover::after {
+    opacity: 1;
+    animation: particleFloat 4s ease-in-out infinite;
+  }
+  
+  @keyframes particleFloat {
+    0%, 100% { 
+      transform: translateY(0) scale(1);
+      opacity: 0.3;
+    }
+    50% { 
+      transform: translateY(-10px) scale(1.1);
+      opacity: 0.6;
+    }
   }
 }
 
@@ -958,6 +1052,24 @@ body.loaded .project__content {
   .project__content:hover {
     animation: none;
     transform: translateY(-8px) scale(1.02);
+  }
+}
+
+/* Cutting-edge text effects */
+.project__title {
+  background: linear-gradient(135deg, #ffffff 0%, #25ab75 50%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 3s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+  0%, 100% { 
+    filter: drop-shadow(0 0 10px rgba(37, 171, 117, 0.3));
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
   }
 }
 
