@@ -182,16 +182,17 @@ document.querySelectorAll('.project__content').forEach(card => {
   
   card.addEventListener('mouseenter', (e) => {
     isHovering = true;
-    card.style.transform = 'translateY(-15px) scale(1.05) rotateX(8deg) rotateY(5deg)';
-    card.style.filter = 'brightness(1.1) contrast(1.05)';
+    card.style.transform = 'translateY(-20px) scale(1.02) rotateX(3deg)';
+    card.style.filter = 'brightness(1.08) contrast(1.1) saturate(1.2)';
     
-    // Add advanced glow effect
+    // Add new modern glow effect
     card.style.boxShadow = `
-      0 30px 60px rgba(37, 171, 117, 0.4), 
-      0 20px 40px rgba(0, 212, 255, 0.3),
-      0 10px 20px rgba(102, 126, 234, 0.2),
-      0 0 0 1px rgba(37, 171, 117, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2)
+      0 40px 80px rgba(37, 171, 117, 0.3), 
+      0 25px 50px rgba(0, 212, 255, 0.2),
+      0 15px 30px rgba(102, 126, 234, 0.15),
+      0 0 0 2px rgba(37, 171, 117, 0.4),
+      inset 0 2px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.1)
     `;
   });
   
@@ -220,10 +221,10 @@ document.querySelectorAll('.project__content').forEach(card => {
     const rotateY = (centerX - x) / 10;
     
     card.style.transform = `
-      translateY(-15px) 
-      scale(1.05) 
-      rotateX(${8 + rotateX}deg) 
-      rotateY(${5 + rotateY}deg)
+      translateY(-20px) 
+      scale(1.02) 
+      rotateX(${3 + rotateX}deg) 
+      rotateY(${rotateY}deg)
     `;
   });
   
