@@ -3,6 +3,15 @@ const navMenu = document.getElementById("nav-menu"),
   navItem = document.querySelectorAll(".nav__item"),
   header = document.getElementById("header");
 
+// Ensure projects are visible immediately
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.project__content').forEach((card) => {
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+    card.style.display = 'block';
+  });
+});
+
 // open and close menu
 navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("nav__menu--open");
@@ -182,6 +191,13 @@ document.querySelectorAll('.project__content').forEach(card => {
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
   
+  // Ensure projects are immediately visible
+  document.querySelectorAll('.project__content').forEach((card) => {
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+    card.classList.add('loaded');
+  });
+  
   // Add professional loading completion animation
   setTimeout(() => {
     document.querySelectorAll('.project__content').forEach((card, index) => {
@@ -189,5 +205,5 @@ window.addEventListener('load', () => {
         card.classList.add('loaded');
       }, index * 100);
     });
-  }, 500);
+  }, 100);
 });
