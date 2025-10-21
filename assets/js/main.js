@@ -176,73 +176,14 @@ document.querySelectorAll('.project__content, .skill--box, .qualification__item'
   observer.observe(el);
 });
 
-// Advanced micro-interactions with cutting-edge effects
+// Professional micro-interactions
 document.querySelectorAll('.project__content').forEach(card => {
-  let isHovering = false;
-  
-  card.addEventListener('mouseenter', (e) => {
-    isHovering = true;
-    card.style.transform = 'translateY(-25px) scale(1.03) rotateX(5deg) rotateY(2deg)';
-    card.style.filter = 'brightness(1.15) contrast(1.2) saturate(1.4) hue-rotate(10deg)';
-    card.style.clipPath = 'polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)';
-    
-    // Add innovative glow effect
-    card.style.boxShadow = `
-      0 50px 100px rgba(37, 171, 117, 0.4), 
-      0 30px 60px rgba(0, 212, 255, 0.3),
-      0 20px 40px rgba(102, 126, 234, 0.2),
-      0 10px 20px rgba(240, 147, 251, 0.15),
-      0 0 0 3px rgba(37, 171, 117, 0.5),
-      inset 0 3px 0 rgba(255, 255, 255, 0.3),
-      inset 0 -3px 0 rgba(0, 0, 0, 0.2),
-      inset 3px 0 0 rgba(37, 171, 117, 0.4),
-      inset -3px 0 0 rgba(0, 212, 255, 0.3)
-    `;
+  card.addEventListener('mouseenter', () => {
+    card.style.transform = 'translateY(-12px) scale(1.03) rotateX(5deg)';
   });
   
   card.addEventListener('mouseleave', () => {
-    isHovering = false;
-    card.style.transform = 'translateY(0) scale(1) rotateX(0deg) rotateY(0deg)';
-    card.style.filter = 'brightness(1) contrast(1)';
-    card.style.boxShadow = `
-      0 8px 32px rgba(0, 0, 0, 0.4),
-      0 0 0 1px rgba(255, 255, 255, 0.05),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1)
-    `;
-  });
-  
-  // Advanced mouse tracking for 3D effects
-  card.addEventListener('mousemove', (e) => {
-    if (!isHovering) return;
-    
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
-    
-    card.style.transform = `
-      translateY(-25px) 
-      scale(1.03) 
-      rotateX(${5 + rotateX}deg) 
-      rotateY(${2 + rotateY}deg)
-    `;
-  });
-  
-  // Advanced click effects
-  card.addEventListener('mousedown', () => {
-    card.style.transform = 'translateY(-10px) scale(1.02) rotateX(5deg) rotateY(2deg)';
-    card.style.transition = 'transform 0.1s ease';
-  });
-  
-  card.addEventListener('mouseup', () => {
-    card.style.transition = 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    if (isHovering) {
-      card.style.transform = 'translateY(-15px) scale(1.05) rotateX(8deg) rotateY(5deg)';
-    }
+    card.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
   });
 });
 
