@@ -235,10 +235,73 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Sort project cards by Google Play download count (descending) before the
+// Projects grid, Project Logos grid, and "show more" logic read from the DOM.
+// Numbers come from each card's data-downloads attribute (Play Store lower bound).
+// Cards without a value (e.g. apps with no public download count) sort last.
+(() => {
+  const grid = document.querySelector('.project__all-wrapper');
+  if (!grid) return;
+
+  const anchor = grid.querySelector('.project__show-more');
+  const toNumber = (card) => {
+    const value = Number.parseInt(card.dataset.downloads, 10);
+    return Number.isNaN(value) ? -1 : value;
+  };
+
+  const sorted = [...grid.querySelectorAll('.project__app-card:not(.project__show-more)')]
+    .map((card, index) => ({ card, index, downloads: toNumber(card) }))
+    .sort((a, b) => (b.downloads - a.downloads) || (a.index - b.index));
+
+  for (const { card } of sorted) {
+    if (anchor) {
+      grid.insertBefore(card, anchor);
+    } else {
+      grid.appendChild(card);
+    }
+  }
+})();
+
 const projectGrid = document.querySelector('.project__all-wrapper');
 const projectCards = projectGrid ? [...projectGrid.querySelectorAll('.project__app-card:not(.project__show-more)')] : [];
+const projectLogoGrid = document.querySelector('#project-logo-grid');
 const showMoreCard = projectGrid?.querySelector('.project__show-more');
 let projectCardsExpanded = false;
+
+if (projectLogoGrid) {
+  for (const card of projectCards) {
+    const role = card.querySelector('.project__app-mark span')?.textContent.trim();
+    if (!['Built', 'Worked on', 'Published'].includes(role)) continue;
+
+    const title = card.querySelector('.project__title')?.textContent.trim();
+    const image = card.querySelector('.project__app-image--logo, .project__icon');
+    const storeLink = card.querySelector('a.project__app-link[href*="play.google.com/store/apps/details?id="]');
+    if (!title || !image || !storeLink) continue;
+
+    const link = document.createElement('a');
+    link.className = 'project-logo-link';
+    link.href = storeLink.href;
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.setAttribute('aria-label', `${title}, ${role}`);
+
+    const logo = document.createElement('img');
+    logo.src = image.currentSrc || image.src;
+    logo.alt = '';
+    logo.loading = 'lazy';
+    logo.decoding = 'async';
+
+    const text = document.createElement('span');
+    text.className = 'project-logo__text';
+    const name = document.createElement('strong');
+    name.textContent = title;
+    const contribution = document.createElement('small');
+    contribution.textContent = role;
+    text.append(name, contribution);
+    link.append(logo, text);
+    projectLogoGrid.append(link);
+  }
+}
 
 function updateProjectCardVisibility() {
   if (!projectGrid || !showMoreCard) return;

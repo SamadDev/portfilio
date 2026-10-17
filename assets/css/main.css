@@ -614,6 +614,62 @@ body {
   line-height: 1.5;
 }
 
+.project-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  border-top: 1px solid var(--color-border);
+}
+
+.project-logo-link {
+  display: flex;
+  min-width: 0;
+  min-height: 8.5rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-light);
+  transition: background-color 180ms ease;
+}
+
+.project-logo-link:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.project-logo-link:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+.project-logo-link > img {
+  width: 5.2rem;
+  height: 5.2rem;
+  flex: 0 0 auto;
+  padding: 0.3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.6rem;
+  background: var(--color-bg-secondary);
+  object-fit: contain;
+}
+
+.project-logo__text {
+  display: grid;
+  min-width: 0;
+  gap: 0.5rem;
+}
+
+.project-logo__text strong {
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  overflow-wrap: anywhere;
+}
+
+.project-logo__text small {
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
 @media screen and (max-width: 600px) {
   .about__wrapper {
     gap: 2rem;
@@ -622,6 +678,20 @@ body {
   .about__fact {
     grid-template-columns: minmax(7rem, 0.55fr) minmax(0, 1.45fr);
     gap: 1rem;
+  }
+
+  .project-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-logo-link {
+    gap: 0.7rem;
+    padding: 0.8rem 0.3rem;
+  }
+
+  .project-logo-link > img {
+    width: 4.4rem;
+    height: 4.4rem;
   }
 }
 
@@ -793,6 +863,38 @@ body {
   object-fit: contain;
 }
 
+.project__app-card .project__app-image--logo {
+  width: 7.2rem;
+  height: 7.2rem;
+  margin: 1rem auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.8rem;
+  background: var(--color-bg-tertiary);
+  object-fit: contain;
+}
+
+.project__app-card > .zstack {
+  display: contents;
+}
+
+.project__app-card .zstack .project__img {
+  display: none;
+}
+
+.project__app-card .zstack .project__icon {
+  position: relative;
+  inset: auto;
+  order: 1;
+  display: block;
+  width: 7.2rem;
+  height: 7.2rem;
+  margin: 1rem auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.8rem;
+  background: var(--color-bg-tertiary);
+  object-fit: contain;
+}
+
 .project__app-card > .zstack {
   order: 1;
   width: calc(100% + 3rem);
@@ -877,6 +979,17 @@ body {
   margin-bottom: 1rem;
   color: var(--color-text);
   font-size: var(--fs-sm);
+}
+
+.project__app-downloads {
+  order: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.4rem 0 0;
+  color: var(--color-primary-light);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
 }
 
 .project__app-card .project__description,

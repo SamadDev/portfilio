@@ -37,25 +37,13 @@
                 </a>
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#hero" class="nav__link">Home</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link">About</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#skills" class="nav__link">skills</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#qualification" class="nav__link">Qualification</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="#project" class="nav__link">Projects</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#footer" class="nav__link">Contact</a>
-                        </li>
+                        <li class="nav__item"><a href="#hero" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#qualification" class="nav__link">Qualification</a></li>
+                        <li class="nav__item"><a href="#project-logos" class="nav__link">Project logos</a></li>
+                        <li class="nav__item"><a href="#project" class="nav__link">Projects</a></li>
+                        <li class="nav__item"><a href="#footer" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="nav__toggle">
@@ -110,11 +98,11 @@
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">About Me</h2>
-                    <span class="section__subtitle">Flutter at the core. Full-stack by practice.</span>
+                    <span class="section__subtitle">Flutter developer with full-stack experience.</span>
                 </div>
                 <div class="about__wrapper d-grid">
                     <div class="about__content">
-                        <h3 class="about__title">I build mobile products from interface to backend.</h3>
+                        <h3 class="about__title">I build mobile apps — from the interface to the backend.</h3>
                         <p class="about__description">I've worked in mobile development since 2020, with 6+ years of experience building cross-platform applications. My work spans an early developer internship, IT and mobile development, and ongoing mobile roles with Jiasaz and Dotteck.</p>
                         <p class="about__description">Alongside Flutter and Dart, I work with Node.js, Express.js, Laravel, Vue.js, MongoDB, Firebase, and Mongoose. I've built or contributed to more than 20 published apps across logistics, commerce, real estate, and business.</p>
                     </div>
@@ -242,7 +230,7 @@
                         <div class="qualification__item">
                             <h3 class="qualification__title">MOBILE APPLICATION DEVELOPER</h3>
                             <p class="qualification__description">Building mobile applications for Dotteck remotely on a part-time basis.</p>
-                            <span class="qualification__date">1-2-2024 - Present</span>
+                            <span class="qualification__date">1-2-2024 - 7-2026</span>
                         </div>
                     </div>
                 </div>
@@ -274,6 +262,16 @@
             </div>
         </section>
 
+        <section id="project-logos" class="section project-logos">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Project Logos</h2>
+                    <span class="section__subtitle">Built, worked on, and published apps</span>
+                </div>
+                <div class="project-logo-grid" id="project-logo-grid" aria-label="Project logos"></div>
+            </div>
+        </section>
+
 
 
 
@@ -288,7 +286,7 @@
                 <div class="d-grid project__wrapper project__all-wrapper" id="project-card-grid">
 
                     <!--============== project 1 =============-->
-                    <div class="project__content project__app-card">
+                    <div class="project__content project__app-card" data-downloads="1000">
                         <div class="zstack">
                             <img src="assets/img/e_banner.png" alt="Eagle Express" class="project__img">
                             <img src="assets/img/eagle.png" alt="Eagle Express" class="project__icon">
@@ -296,6 +294,7 @@
                         <div class="project__app-mark"><span>Featured</span></div>
                         <div class="project__card-content">
                             <h3 class="project__title">Eagle Express</h3>
+                            <p class="project__app-downloads">1K+ downloads</p>
                             <p class="project__description project__app-description">A shopping and shipping app.</p>
                             <div class="project__stores">
                                 <a href="https://apps.apple.com/us/app/eagle-express-iq/id6450153753" class="project__app-link" target="_blank" rel="noreferrer">App Store <i class="ri-external-link-line" aria-hidden="true"></i></a>
@@ -304,7 +303,7 @@
                         </div>
                     </div>
                     <!--============== project 2 =============-->
-                    <div class="project__content project__app-card">
+                    <div class="project__content project__app-card" data-downloads="100">
                         <div class="zstack">
                             <img src="assets/img/r_banner.png" alt="Rasalmal" class="project__img">
                             <img src="assets/img/rasalmal.png" alt="Rasalmal" class="project__icon">
@@ -312,6 +311,7 @@
                         <div class="project__app-mark"><span>Featured</span></div>
                         <div class="project__card-content">
                             <h3 class="project__title">Rasalmal</h3>
+                            <p class="project__app-downloads">100+ downloads</p>
                             <p class="project__description project__app-description">A real estate app from Ras Almal.</p>
                             <div class="project__stores">
                                 <a href="https://apps.apple.com/app/id1551353775" class="project__app-link" target="_blank" rel="noreferrer">App Store <i class="ri-external-link-line" aria-hidden="true"></i></a>
@@ -321,7 +321,7 @@
                     </div>
 
                     <!--============== project 3 =============-->
-                    <div class="project__content project__app-card">
+                    <div class="project__content project__app-card" data-downloads="100">
                         <div class="zstack">
                             <img src="assets/img/m_banner.png" alt="Mandubi" class="project__img">
                             <img src="assets/img/mandubi.png" alt="Mandubi" class="project__icon">
@@ -329,6 +329,7 @@
                         <div class="project__app-mark"><span>Featured</span></div>
                         <div class="project__card-content">
                             <h3 class="project__title">Mandubi</h3>
+                            <p class="project__app-downloads">100+ downloads</p>
                             <p class="project__description project__app-description">A SaaS app for a pharmaceutical business.</p>
                             <div class="project__stores">
                                 <a href="https://apps.apple.com/app/id1551353775" class="project__app-link" target="_blank" rel="noreferrer">App Store <i class="ri-external-link-line" aria-hidden="true"></i></a>
@@ -338,13 +339,15 @@
                     </div>
 
                     <!--============== project 4 =============-->
-                    <div class="project__content project__app-card">
+                    <div class="project__content project__app-card" data-downloads="100">
                         <div class="zstack">
                             <img src="assets/img/k_banner.png" alt="Kal" class="project__img">
                             <img src="assets/img/kall.png" alt="Kal" class="project__icon">
                         </div>
-                        <div class="project__app-mark"><span>Featured</span></div>
-                        <h3 class="project__title">Kal</h3>
+                        <div class="project__app-mark"><span>Published</span></div>
+                        <h3 class="project__title">Kal Co</h3>
+                            <p class="project__app-downloads">100+ downloads</p>
+                        <p class="project__app-publisher">Kardokh Hussein</p>
                         <p class="project__description project__app-description">General trading and international cargo transportation.</p>
 
                         </a>
@@ -359,13 +362,14 @@
                     </div>
 
                     <!--============== project 4 =============-->
-                    <div class="project__content project__app-card">
+                    <div class="project__content project__app-card" data-downloads="10">
                         <div class="zstack">
                             <img src="assets/img/w_banner.png" alt="ۆڵپی" class="project__img">
                             <img src="assets/img/walpy.jpg" alt="Agency Website" class="project__icon">
                         </div>
                         <div class="project__app-mark"><span>Built</span></div>
                         <h3 class="project__title">wallpy</h3>
+                            <p class="project__app-downloads">10+ downloads</p>
                         <p class="project__app-publisher">Smart vision IQ</p>
                         <p class="project__description project__app-description">A gallery for pictures, videos, and quotes.</p>
 
@@ -380,13 +384,15 @@
                     </div>
 
                     <!--============== project 5 =============-->
-                    <div class="project__content project__app-card">
+                    <div class="project__content project__app-card" data-downloads="100">
                         <div class="zstack">
                             <img src="assets/img/f_banner.png" alt="Futian" class="project__img">
                             <img src="assets/img/futian.png" alt="Futian" class="project__icon">
                         </div>
-                        <div class="project__app-mark"><span>Featured</span></div>
+                        <div class="project__app-mark"><span>Published</span></div>
                         <h3 class="project__title">Futian</h3>
+                            <p class="project__app-downloads">100+ downloads</p>
+                        <p class="project__app-publisher">Kardokh Hussein</p>
                         <p class="project__description project__app-description">A shipment app from Futian.</p>
 
                         </a>
@@ -401,7 +407,7 @@
                     </div>
 
                     <!--============== project 4 =============-->
-                    <div class="project__content project__app-card">
+                    <div class="project__content project__app-card" data-downloads="">
                         <div class="zstack">
                             <img src="assets/img/o_banner.png" alt="O2" class="project__img">
                             <img src="assets/img/logo.png" alt="O2" class="project__icon">
@@ -429,7 +435,7 @@
 
                     </div>
                     <!--============== project 4 =============-->
-                    <div class="project__content project__app-card">
+                    <div class="project__content project__app-card" data-downloads="">
                         <div class="zstack">
                             <img src="assets/img/mo_banner.png" alt="Molida" class="project__img">
                             <img src="assets/img/molida.png" alt="Molida" class="project__icon">
@@ -458,13 +464,14 @@
                     </div>
 
                        <!--============== project 4 =============-->
-                       <div class="project__content project__app-card">
+                       <div class="project__content project__app-card" data-downloads="10">
                         <div class="zstack">
                             <img src="assets/img/l_banner.png" alt="London Glass" class="project__img">
                             <img src="assets/img/london.jpg" alt="London Glass" class="project__icon">
                         </div>
                         <div class="project__app-mark"><span>Built</span></div>
                         <h3 class="project__title">London Glass</h3>
+                            <p class="project__app-downloads">10+ downloads</p>
                         <p class="project__app-publisher">Smart vision IQ</p>
                         <p class="project__description project__app-description">The listing highlights London Glass's highly qualified experts.</p>
 
@@ -487,173 +494,275 @@
                 </div>
                 <div class="project__app-section">
                     <div class="d-grid project__wrapper project__app-wrapper">
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="5000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">Wzari</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/QIXSp4gcaqjh5EsPEd7DB0O31xTCW5nFHEMQpvQ_XmfiR33UJqiEFV62ejtPgT92PRyhf2W82ReVRWQm4VBSqg=w416-h235-rw" alt="Wzari app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">5K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/rvgjsb_wiJyqQMIYYyI7UhgGPcKxx76lxbVqYtvlT2BQlbdNoPqpi3R_KD5W46KDku1sQDvQhBJAe4SWVeyi4w=w240-h480-rw" alt="Wzari app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Smart vision IQ</p>
                             <p class="project__description project__app-description">Practice questions for grade 12 students.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.quiz.studentquiz.quiz_student" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="10000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">Box Cargo</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/5eJGS0yzNWjvPNZ3yJf6LpQwE16wp7TZ5X0__xTE2w19vjPcQ-y8I73-PQd7o2RaygXAMPaLMdNn1PVtB2l4=w416-h235-rw" alt="Box Cargo app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">10K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/e6GTXji4GeYwWhVPziK2-wTks-pghWVvKL738PKUSy6EBa_rpIABHwvHM6c0MQCTrYCN-wLixyoFus2DKae6sg=w240-h480-rw" alt="Box Cargo app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Cargo and freight services.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.box.logisticcargo" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="50">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">Dalen Logistics</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/pNhM2Vi56sMpe3gRi-FMisr_9u33-UkZuAXjJ9hm9VML_EnuXwGJcoYU9N6Nnw6fekUuqx0_FCidphIqjGfuUw=w416-h235-rw" alt="Dalen Logistics app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">50+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/C72r8L92L5Fb9jMf-fIzuy3-US5_UlSlCqFW5jRZn7San-M_9Br-v8mInuAaGu5RTIBDs0BzHGaFvVaBe2ckvg=w240-h480-rw" alt="Dalen Logistics app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">International logistics with fast, affordable delivery services.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.dalenLogistic" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="1000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">AKQ Logistic</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/8x9l4y7RmEhZCdlDPizYYpzbfJ5agi9P3YNEH9GdMSk6vOop58HADtjE3BaqgKAivLtUYYZQqgqkSoghtoOEMgo=w416-h235-rw" alt="AKQ Logistic app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">1K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/mfXTNedS3ejIwaNOXo2P1hf5N4-_s8wZpEVcmenodFGO7oUMPv2bXSh0tvzw2wQQUxKfQqYsa95zxGXwx3J4NVc=w240-h480-rw" alt="AKQ Logistic app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Cargo and freight services.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.newaqkcargo.cargoapp" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="5000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">Wadian alharir</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/8a9-s9bDyZ-VKCjjGBhKhDoEjdb3DcBOCDL-NF_1ORGh7h_gi1yCsGyLISdJyaVWbykrlzOW-eJ0YL8EqYYC=w416-h235-rw" alt="Wadian alharir app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">5K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/gcjlqFWygAe-3qbyk3_coGwbAaiGq3cxr6a_7twK4Fax4XZ7_30qqaGcBR-Wv-Fi5dwv90JDNpXsHrnOBy8VlQ=w240-h480-rw" alt="Wadian alharir app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">General transportation and logistics services.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.wadialharir.newcargoapp" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="10">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">Alamoodac</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/VbiZuZ5hRp7txKRGTjKiPcQu4LlqZubqdyIbLCPlJC6h5V9O1IZQLQG9rRY0r9SWfGXPcvtwC2k2PJDWIMvk=w416-h235-rw" alt="Alamoodac app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">10+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/kUQAumzYwluyc7RRsuY5EyR0AG09WbFg61azXfAo_t4Z7DMTdHnulJ4ej4VkbmTuMqhv4zjZw7bOkv5QyKrZUg=w240-h480-rw" alt="Alamoodac app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">A complete shopping destination.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.alamoodac.market" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="10">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">Golden Speed</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/VOI2P1irAT6B-BK10kReojrUx8tyCta4qKCAomPopTpfAqQcfqmiarVkRHVU3jlHfPpDvJjHm_DN4UR74vsnuQ=w416-h235-rw" alt="Golden Speed app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">10+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/Dzbgp1VUYSXiLtjnjgwDHna2WeSkisxkWjdykiKvG5rihF91Kna5oo7YEDlSukNZJfM1fidO6hOQ34NhZ50V7Q=w240-h480-rw" alt="Golden Speed app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Track, manage, and book cargo shipments.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.goldenspeed.jiasaz" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="1000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">IBS Cargo</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/jZMIpBIG0vVZyzHCK5KtPXzaAwOlH9G9xfP5ydI4-BjQbrgK5dtuzadvbQDFB9ESTy1cUzShA26oFWGkV5GAGA=w416-h235-rw" alt="IBS Cargo app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">1K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/7jNwqc3_8uRgt1hHnm77MVWJrMSsU_JsZRw9nYl0S3od1aoOfhYbEXZPV-rGk74dY7G3YXKZnSGUO91XO6hraA=w240-h480-rw" alt="IBS Cargo app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">An all-in-one logistics solution.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.iraqBridgeibs.cargoapp" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="1000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">Master Cargo</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/3wba-byBWm_-PHYxDN7ZcShueJQ8R2DxwX4Eyd_6_phiuM_IJR3kFoKJsIRUBKWVyDd9Don7fzd64AGM_BLhcVE=w416-h235-rw" alt="Master Cargo app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">1K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/auPd1DOBA2Y7OM0xeScxwLkYkyKhuv2E4S3yhcncOXYJXmrE-9hgcTB8OzlYCP-Ldp5pzCQemOznBMpw79pGQQ=w240-h480-rw" alt="Master Cargo app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">A mobile app for cargo services.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.masterCargo.cargo" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="10">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Built</span></div>
                             <h3 class="project__title">Mihan Jobseeker</h3>
-                            <img class="project__app-image project__app-image--icon" src="https://play-lh.googleusercontent.com/7H0FEF7D42c9YJCdGgjPeT9t-hyVj0dibaG_eVZR2hrKgOcVjsbI2z3KIQe_zBopq7jVCiob592UWswH6qaXbQ=s256-rw" alt="Mihan Jobseeker app icon" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">10+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/7H0FEF7D42c9YJCdGgjPeT9t-hyVj0dibaG_eVZR2hrKgOcVjsbI2z3KIQe_zBopq7jVCiob592UWswH6qaXbQ=w240-h480-rw" alt="Mihan Jobseeker app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Dwrandaz</p>
                             <p class="project__description project__app-description">Create a CV and explore job and training opportunities.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.mihan.mihanjobseeker" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="1000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">ESB Group</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/3nI2lhUTL7R19avgw9eL2-L_872rr8tWkq4iIoimaYyo9PTm1AFMLL7v2OBE1ijniMdOj7SwwDjyhRtakP-PEw=w416-h235-rw" alt="ESB Group app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">1K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/As7ZcFet-186BsLfav1zbZ8mKtesg_tcdCtU_z7N_RT3GlvZJzB8Dnrny92sSRaXFFDT-cDwGgd69aEYhvHg5A=w240-h480-rw" alt="ESB Group app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Company information for a leading pharmaceutical business in Iraq.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.jiasaz.esbapp" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="10">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">Active Pharma</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/YJWWd5Nzc60O9_by0oe9caO38nUH9hq8i_lcCFyyBLJnLD27EW_ywgzAxR4F3_CI2o_wnY1O-4tfi-ZhUZMsuw=w416-h235-rw" alt="Active Pharma app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">10+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/lKnOH96iIVFTXqS4g-Q6bjXjdRAcETDhK2jf0vC59BTfWyfm98ebo6EPVEVW977zDdacWZAZaNQhJGIUCxN8=w240-h480-rw" alt="Active Pharma app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Company information for an Iraqi pharmaceutical business.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.activepharma.app" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="1">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">ESB South Field</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/wqdSh_HSYB6lj2ucgHjkkQzXXAtf9J2MSmmMNwJv1UAsd8U0takglQU3pbXzZikUjAzLi6LZx7kL4w_nL467xg=w416-h235-rw" alt="ESB South Field app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">1+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/1TtW0Q7k4h87Qm_JJzfzhnuR0Dj6XltEZQdGm2gOr7ZXqoLRI2N7YANaQPi9GPi-Tjw92gG4HLB0zp-ZhHI4bTs=w240-h480-rw" alt="ESB South Field app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Helps ESB field reps manage visits, orders, collections, and approvals.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.selzz.esbsouth" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="1">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">Middleton Field</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/K9yi9ati6oMyOcnM8vQurG8E5wBRzf8nlF3dgTQr4kzgYIQ6Aivm0__QgU9aYG6ES5hKZ_C3rbsDS8tmiQbPnA=w416-h235-rw" alt="Middleton Field app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">1+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/NkgKsJN-YYdXhZmN9kunW_S0x85Nk9U4dtOstROgDbVkJL2BHGBGy1beH_POkanq-IfeRfEN3AZf8XxQft_-=w240-h480-rw" alt="Middleton Field app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Manage field-team calls, orders, targets, and expenses, including offline.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.jiasaz.middleton" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="100">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">PurePharma KRG</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/NW-G93k0hrvuXcFW4C57jXZsTG8MVOfR5x6G6NdIQSst7t7lhK9zGXoSl0fIgPT-7_0sAUi-XNY5ut6mfwEx=w416-h235-rw" alt="PurePharma KRG app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">100+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/_XXw9SV9QA9AKyZB5PRNLiV07MXprO6FqJ5dySyXezHfn9KOcV_RkXe0bHoDVMBGs3ITQElRqejZ9xsoCnQ6Wg=w240-h480-rw" alt="PurePharma KRG app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Company app for PurePharma, established in 2017.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.jiasaz.purepharmakurdstan" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="100">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">Doctor Pharma</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/p1q4K2r4HzoUmY-sPMxJrrpaO97Cvz4fV0EHA7RrfJvCcqEa50YHwVwgE95hmGLZuSMBLUcaObfhB0BO7X1F=w416-h235-rw" alt="Doctor Pharma app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">100+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/ewZtl_XXndkiqCQoYR00q6Not8jB1ou_uQgSycNNKk2XeHBVJlHcx9R-Ajqd-V0hXDL65SsJxZ1bfGm85gZg=w240-h480-rw" alt="Doctor Pharma app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Company app for DPH, a pharmaceutical business in Iraq's Kurdistan region.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.jiasaz.doctorpharma" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="1000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">Vera Health</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/M8Bz8IOg50ldx1pij0Hu_BXn-Ubk0EUtDY4k2qYr03jaeBppXjomtl0Vx_IBUN19jLwxqIxilqZz9Cl6xa1hqHE=w416-h235-rw" alt="Vera Health app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">1K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/IK5msHx5WRm2AEKWLRAiJmX_--HRdivzjukeRm95pUBc0ZuYBG_9Vog7P7vRR9YXGyBy9IgnZIfx8NVIv3MagA=w240-h480-rw" alt="Vera Health app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Company app for VERA Health, a pharmaceutical business based in Erbil.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.jiasaz.verahealth" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="50">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">Arch Star</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/AG4mb1VGFytMItKVhT7BRmjRMB8jRjRKEuptdtz2L-0ZDHV5Z_s8KmIQT8cccRDqg4zfCD9ZjcDz122NeMK_Rw=w416-h235-rw" alt="Arch Star app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">50+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/qdufoRXgfW27JwePGuCdDyZE6OiYTegEErQUpCrJiwdKnLl4FPMzLNskGCZ1oXr3tAD6OQecrzZ5Jkht29b71Q=w240-h480-rw" alt="Arch Star app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">Jiasaz Company</p>
                             <p class="project__description project__app-description">Logistics services from Arch Star.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.archstar.logistics" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="1000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">ZMC Drive and Arrive</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/Wq_axg4JLXGuQDR2iYvpp8OtX4919mmrXMUI79SNNenKqGna0xUoOmoGPs4v_ZnI2u0aIrLcz-5EGuOzRRWj2w=w416-h235-rw" alt="ZMC Drive and Arrive app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">1K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/NSSg3ggwSfqUeQB6Sdxnyi9MCSCDo8SNLUqSU_1Xye6y1azHWYQsFHb7DcZSGSlNjBbwsuNc_xTPpnTAW1cBHg=w240-h480-rw" alt="ZMC Drive and Arrive app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">ZMC GENERAL TRADING LLC</p>
                             <p class="project__description project__app-description">For ZMC drivers delivering goods to customers.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=me.zmc.drivearrive" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="10000">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">Zmc Customer</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/ZsHhsULkonjoilEbVqmmacRgrGaY7MAIAYF8GbBfGnbqezz7tunYJBV_w-WkHsmSVbr-b2Ar9d-jVoaeL3Pi4g=w416-h235-rw" alt="Zmc Customer app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">10K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/unCZHkmhkO1icC9ge0O4_-jScffP5XTszkcVSDgHNAhdkRl292IJzPcDNyPV1wbuIYvdLdZg0n21L1LahWBL=w240-h480-rw" alt="Zmc Customer app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">ZMC GENERAL TRADING LLC</p>
                             <p class="project__description project__app-description">Helps ZMC customers stay in touch with the company.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.jiasaz.zmccustomers" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
-                        <article class="project__content project__app-card">
+                        <article class="project__content project__app-card" data-downloads="500">
                             <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Worked on</span></div>
                             <h3 class="project__title">ZMC Staff &amp; Agents</h3>
-                            <img class="project__app-image" src="https://play-lh.googleusercontent.com/O-HQF6VHmsIlqQDIloGGxOPNHdrUKWhYo-PCLFzTUODsMoU0tYltYDwEEypjShzqa16TPLfY9MUSEj1DC_Ho_g=w416-h235-rw" alt="ZMC Staff and Agents app preview" loading="lazy" decoding="async">
+                            <p class="project__app-downloads">500+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/1HZUE2wpPQsdR52q_uQGwkYu84kMuIiibgsi8lAds8IBlmrZoU6Zf7G_MZyyA3l2Bya4M1G6-0biEVB5cqWMmg=w240-h480-rw" alt="ZMC Staff and Agents app logo" loading="lazy" decoding="async">
                             <p class="project__app-publisher">ZMC GENERAL TRADING LLC</p>
                             <p class="project__description project__app-description">Helps company staff and agents manage daily cargo tasks.</p>
                             <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.jiasaz.zmc_staff" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="100">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">Oneteam HRIS</h3>
+                            <p class="project__app-downloads">100+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/oQoCpVM0Unlq3TKhVEtxTQtQcwFj72MHv14s2vW0bkQripySPzn_YublzNakdss7GTvKu5LYSdcu0ikndZAl=w240-h480-rw" alt="Oneteam HRIS app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">Official human resources app.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.focusoneteam.oneteamhrs" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="100">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">Mr.Logistic</h3>
+                            <p class="project__app-downloads">100+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/xSSiPRE0rsT6paE1gsalasTkp5GpEb4c4pQrMP0aYZ534csjlbSHdoJT2RE2f5477N5vD-jhCcMr7A-ihwFp7w=w240-h480-rw" alt="Mr.Logistic app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">Global cargo shipping from Iraq.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.mrlogistic.cargoapp" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="50">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">Beginner Co</h3>
+                            <p class="project__app-downloads">50+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/vn_1-v-Pqlo3dkfgxNgYBsvI8P4Unl1rC6xH1LrLkT05AZELwAHoEaKK3_ajCYMl_oQAa2AVycuCO4zLAGCWwA=w240-h480-rw" alt="Beginner Co app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">Cargo services from a leading cargo company.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.beginnerco.cargo" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="50">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">Amool</h3>
+                            <p class="project__app-downloads">50+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/7maWymCiRTvgzQfnhOS2ySvtuXbIRtiz4SoXmJVQBUq-VnDg-IlnVFHReIE04QY-eD-il5aHdxHcl5apJbvLig=w240-h480-rw" alt="Amool app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">A complete cargo solution.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.dottechcargo.amoolcargo" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="1000">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">DOTHawala</h3>
+                            <p class="project__app-downloads">1K+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/tSPsS8hhCeBEw8WALGC2hJV5sTcTZ4CBlLks66qmOr5O5iFb8O8w72Ba5OcxpBXePVUpdxshEz6omWGIC1_9d8c=w240-h480-rw" alt="DOTHawala app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">Lets customers and suppliers check daily transactions.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.kardo.exchange" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="50">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">Bana Co</h3>
+                            <p class="project__app-downloads">50+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/M9Aop9FoYaN-NtaiFLbgt9eVgFZ2JnKgMrPttUD5W7Qy1pcbqvkzMs0JQDOZRQdJsBI-Oi1qvqSTQDZcg9JU=w240-h480-rw" alt="Bana Co app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">Cargo services from Bana Group.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.banagroup.cargo" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="5">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">Ams Co</h3>
+                            <p class="project__app-downloads">5+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/FT_cB54HPo1_jrvn8UgakenwqJmUnocsFYKYiFtluBtj8WLWgiWGjcmj1KpYTXJpQWCpCWGh-wEFFDqcYzCtBA=w240-h480-rw" alt="Ams Co app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">Cargo transportation to Dubai.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.ams.cargoapp" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="5">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">Asna</h3>
+                            <p class="project__app-downloads">5+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/3bY4BY5edsG9JTuP-YRGd6nejXJYNCmq7dUIE42a59MCY233aSRpV2ZUb7VonWqkOOzcCISusUrCz9Tvpc-e=w240-h480-rw" alt="Asna app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">Cargo and logistics app.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.dottech.asna" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="project__content project__app-card" data-downloads="10">
+                            <div class="project__app-mark"><i class="ri-google-play-fill" aria-hidden="true"></i><span>Published</span></div>
+                            <h3 class="project__title">Shkar Co</h3>
+                            <p class="project__app-downloads">10+ downloads</p>
+                            <img class="project__app-image project__app-image--logo" src="https://play-lh.googleusercontent.com/rx6haVtvkq4SdClhEPmfStBtJUa6MyXsC2_nhxhLZ35IoVKDci-vPRCsR_CM4EjrL4Jiz8-0WmwgZM3VYKGxww=w240-h480-rw" alt="Shkar Co app logo" loading="lazy" decoding="async">
+                            <p class="project__app-publisher">Kardokh Hussein</p>
+                            <p class="project__description project__app-description">Cargo services from Shkar Co.</p>
+                            <a class="project__app-link" href="https://play.google.com/store/apps/details?id=com.shkarco.cargo" target="_blank" rel="noreferrer">View on Google Play <i class="ri-external-link-line" aria-hidden="true"></i></a>
                         </article>
                     </div>
                 </div>
