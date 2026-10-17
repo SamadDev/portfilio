@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.project__content').forEach((card) => {
     card.style.opacity = '1';
     card.style.transform = 'translateY(0)';
-    card.style.display = 'block';
+    card.style.display = card.classList.contains('project__app-card') ? 'flex' : 'block';
   });
 });
 
@@ -83,28 +83,6 @@ const sr = ScrollReveal({
   easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
   scale: 0.95,
   opacity: 0,
-});
-
-// Hero section with staggered animations
-sr.reveal(".hero__content", { 
-  origin: "left",
-  delay: 200,
-  duration: 1500,
-  easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
-});
-
-sr.reveal(".hero__img", { 
-  origin: "right",
-  delay: 400,
-  duration: 1500,
-  scale: 0.9
-});
-
-sr.reveal(".hero__info-wrapper", {
-  delay: 600,
-  interval: 200,
-  origin: "bottom",
-  distance: "40px"
 });
 
 // Skills section with professional reveal
@@ -256,3 +234,32 @@ window.addEventListener('scroll', () => {
     ticking = true;
   }
 });
+
+const projectGrid = document.querySelector('.project__all-wrapper');
+const projectCards = projectGrid ? [...projectGrid.querySelectorAll('.project__app-card:not(.project__show-more)')] : [];
+const showMoreCard = projectGrid?.querySelector('.project__show-more');
+let projectCardsExpanded = false;
+
+function updateProjectCardVisibility() {
+  if (!projectGrid || !showMoreCard) return;
+
+  const columns = getComputedStyle(projectGrid).gridTemplateColumns.split(/\s+/).filter(Boolean).length;
+  const visibleCardCount = Math.max(1, columns * 3 - 1);
+
+  projectCards.forEach((card, index) => {
+    card.classList.toggle('is-hidden', !projectCardsExpanded && index >= visibleCardCount);
+  });
+
+  showMoreCard.hidden = projectCards.length <= visibleCardCount;
+  showMoreCard.setAttribute('aria-expanded', String(projectCardsExpanded));
+  showMoreCard.querySelector('span').textContent = projectCardsExpanded ? 'Show fewer projects' : 'Show more projects';
+  showMoreCard.querySelector('i').className = projectCardsExpanded ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line';
+}
+
+showMoreCard?.addEventListener('click', () => {
+  projectCardsExpanded = !projectCardsExpanded;
+  updateProjectCardVisibility();
+});
+
+updateProjectCardVisibility();
+window.addEventListener('resize', updateProjectCardVisibility);

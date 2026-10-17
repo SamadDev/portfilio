@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f1">
+  <title>App Experience Checklist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17251f;
+      --muted: #65716b;
+      --line: #dce3dc;
+      --paper: #fbfcf9;
+      --canvas: #f1f4ee;
+      --green: #176b4d;
+      --blue: #275f78;
+      font-family: "Space Grotesk", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--canvas);
+      background-image: linear-gradient(135deg, rgba(255, 255, 255, .7), transparent 58%), repeating-linear-gradient(0deg, transparent 0 35px, rgba(23, 37, 31, .025) 35px 36px);
+    }
+
+    button, input { font: inherit; }
+
+    .page {
+      width: min(100% - 36px, 940px);
+      margin: 0 auto;
+      padding: 54px 0 72px;
+      animation: arrive .45s ease-out both;
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .topline::before { width: 24px; height: 3px; background: var(--green); content: ""; }
+    h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.04; }
+    .intro { margin: 12px 0 30px; color: var(--muted); font-size: 16px; }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .search-wrap { position: relative; flex: 1 1 260px; max-width: 390px; }
+    .search-wrap::before { position: absolute; top: 50%; left: 13px; color: var(--muted); content: "⌕"; font-size: 22px; transform: translateY(-55%); }
+    .search { width: 100%; min-height: 42px; padding: 9px 12px 9px 38px; border: 1px solid var(--line); border-radius: 4px; outline: none; color: var(--ink); background: var(--paper); }
+    .search:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid rgba(39, 95, 120, .3); outline-offset: 2px; }
+    .toolbar-actions, .filters { display: flex; align-items: center; gap: 8px; }
+    .filters { padding: 3px; border: 1px solid var(--line); border-radius: 5px; background: rgba(255, 255, 255, .6); }
+
+    button { min-height: 34px; padding: 7px 10px; border: 0; border-radius: 3px; color: var(--muted); background: transparent; cursor: pointer; }
+    .filter[aria-pressed="true"] { color: var(--ink); background: white; box-shadow: 0 1px 3px rgba(23, 37, 31, .12); }
+    .action { border: 1px solid var(--line); color: var(--ink); background: var(--paper); }
+
+    .summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0 4px; color: var(--muted); font-size: 13px; }
+    .summary-counts { color: var(--ink); font-weight: 600; }
+    .group { margin-top: 28px; }
+    .group-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 8px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+    .group-heading h2 { margin: 0; font-size: 18px; }
+    .group-heading a { color: var(--green); font-size: 13px; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    .column-labels, .app-row { display: grid; grid-template-columns: minmax(0, 1fr) 110px 130px; align-items: center; gap: 12px; }
+    .column-labels { min-height: 34px; color: var(--muted); font-size: 11px; font-weight: 600; text-transform: uppercase; }
+    .app-row { min-height: 54px; border-top: 1px solid var(--line); transition: background-color .16s ease; }
+    .app-row:hover { background: rgba(255, 255, 255, .58); }
+    .app-name { overflow-wrap: anywhere; color: var(--ink); font-size: 14px; font-weight: 500; text-decoration: none; }
+    .app-name:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .choice { display: flex; align-items: center; gap: 8px; color: var(--muted); cursor: pointer; font-size: 13px; }
+    .choice input { width: 17px; height: 17px; margin: 0; accent-color: var(--green); cursor: pointer; }
+    .choice.worked input { accent-color: var(--blue); }
+    .empty { padding: 22px 0; color: var(--muted); text-align: center; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    @media (max-width: 620px) {
+      .page { width: min(100% - 28px, 940px); padding-top: 34px; }
+      .toolbar { align-items: stretch; flex-direction: column; }
+      .search-wrap { max-width: none; }
+      .toolbar-actions { justify-content: space-between; }
+      .column-labels, .app-row { grid-template-columns: minmax(0, 1fr) 82px 102px; gap: 8px; }
+      .column-labels { font-size: 10px; }
+      .choice { gap: 5px; font-size: 12px; }
+      .app-name { font-size: 13px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topline">Portfolio workspace</div>
+    <h1>App experience</h1>
+    <p class="intro">Mark the apps you built or contributed to.</p>
+
+    <div class="toolbar">
+      <label class="search-wrap">
+        <span class="visually-hidden">Search apps</span>
+        <input class="search" id="search" type="search" placeholder="Search apps" autocomplete="off">
+      </label>
+      <div class="toolbar-actions">
+        <div class="filters" role="group" aria-label="Filter apps">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="selected" aria-pressed="false">Selected</button>
+        </div>
+        <button class="action" id="clear" type="button">Clear selections</button>
+      </div>
+    </div>
+
+    <div class="summary" aria-live="polite">
+      <span class="summary-counts" id="counts">0 built · 0 worked on</span>
+      <span id="save-note">Saved in this browser</span>
+    </div>
+
+    <div id="app-groups"></div>
+    <p class="empty" id="empty" hidden>No matching apps.</p>
+  </main>
+
+  <script>
+    const groups = [
+      {
+        name: "Smart vision IQ",
+        url: "https://play.google.com/store/apps/developer?id=Smart+vision+IQ",
+        apps: [
+          ["Mizginhat", "https://play.google.com/store/apps/details?id=com.mizgin.customer"],
+          ["Drox", "https://play.google.com/store/apps/details?id=com.sawda.drox"],
+          ["Wzari", "https://play.google.com/store/apps/details?id=com.quiz.studentquiz.quiz_student"],
+          ["London Glass", "https://play.google.com/store/apps/details?id=com.smartvision.london_glass"],
+          ["PharmaRe - فاڕماڕێ", "https://play.google.com/store/apps/details?id=com.krd.pharmare"],
+          ["My Home Realestate", "https://play.google.com/store/apps/details?id=com.myhomecompany.myhomeapp"],
+          ["Rasalmal - راس المال", "https://play.google.com/store/apps/details?id=smartvisionrasalmal.raasalmal.com"],
+          ["wallpy", "https://play.google.com/store/apps/details?id=com.wallpy.applications"],
+          ["King Delivery", "https://play.google.com/store/apps/details?id=com.smart.king.app"],
+          ["King Vendor", "https://play.google.com/store/apps/details?id=com.smart.king.vendor"]
+        ]
+      },
+      {
+        name: "Jiasaz Company",
+        url: "https://play.google.com/store/apps/developer?id=Jiasaz+Company",
+        apps: [
+          ["Box Cargo", "https://play.google.com/store/apps/details?id=com.box.logisticcargo"],
+          ["Dalen Logistics", "https://play.google.com/store/apps/details?id=com.dalenLogistic"],
+          ["AKQ Logistic", "https://play.google.com/store/apps/details?id=com.newaqkcargo.cargoapp"],
+          ["Wadian alharir", "https://play.google.com/store/apps/details?id=com.wadialharir.newcargoapp"],
+          ["ESB Group", "https://play.google.com/store/apps/details?id=com.jiasaz.esbapp"],
+          ["Alamoodac", "https://play.google.com/store/apps/details?id=com.alamoodac.market"],
+          ["Active Pharma", "https://play.google.com/store/apps/details?id=com.activepharma.app"],
+          ["Golden Speed", "https://play.google.com/store/apps/details?id=com.goldenspeed.jiasaz"],
+          ["IBS Cargo", "https://play.google.com/store/apps/details?id=com.iraqBridgeibs.cargoapp"],
+          ["ESB South Field", "https://play.google.com/store/apps/details?id=com.selzz.esbsouth"],
+          ["WAD EXPRESS", "https://play.google.com/store/apps/details?id=com.mashawir.wadiango.merchant"],
+          ["WadianGO Driver", "https://play.google.com/store/apps/details?id=com.mashawir.wadiango.driver"],
+          ["WajzGO Driver", "https://play.google.com/store/apps/details?id=com.mashawir.wajzgo.driver"],
+          ["Middleton Field", "https://play.google.com/store/apps/details?id=com.jiasaz.middleton"],
+          ["PurePharma KRG", "https://play.google.com/store/apps/details?id=com.jiasaz.purepharmakurdstan"],
+          ["WajzGO Merchant", "https://play.google.com/store/apps/details?id=com.mashawir.wajzgo.merchant"],
+          ["Doctor Pharma", "https://play.google.com/store/apps/details?id=com.jiasaz.doctorpharma"],
+          ["Vera Health", "https://play.google.com/store/apps/details?id=com.jiasaz.verahealth"],
+          ["Master Cargo", "https://play.google.com/store/apps/details?id=com.masterCargo.cargo"],
+          ["Arch Star", "https://play.google.com/store/apps/details?id=com.archstar.logistics"]
+        ]
+      },
+      {
+        name: "Dwrandaz",
+        url: "https://play.google.com/store/apps/dev?id=5285840060594387531",
+        apps: [
+          ["Smart City", "https://play.google.com/store/apps/details?id=com.dwrandaz.smart_city"],
+          ["View Market", "https://play.google.com/store/apps/details?id=com.dwrandaz.viewmarketeco"],
+          ["Bazrgan Driver", "https://play.google.com/store/apps/details?id=com.eyetmax.bazrganecomdriver"],
+          ["Mihan Jobseeker", "https://play.google.com/store/apps/details?id=com.mihan.mihanjobseeker"],
+          ["Bazrgan Sales Rep", "https://play.google.com/store/apps/details?id=com.dwrandaz.bazrgan_sales_rep"],
+          ["Hazhir Dictionary", "https://play.google.com/store/apps/details?id=com.dwrandaz.hazhir_dictionary"],
+          ["Dr. Uthman", "https://play.google.com/store/apps/details?id=com.dwrandaz.dr_osman_mobile"],
+          ["Bazrgan Data Migration", "https://play.google.com/store/apps/details?id=com.dwrandaz.bazrgan_data_migration"],
+          ["Masulka", "https://play.google.com/store/apps/details?id=com.dwrandaz.masulka_user"],
+          ["Smart City Warehouse", "https://play.google.com/store/apps/details?id=com.dwrandaz.smartcity_warehouse"],
+          ["Masulka Business", "https://play.google.com/store/apps/details?id=com.dwrandaz.masulka_business2"]
+        ]
+      },
+      {
+        name: "ZMC GENERAL TRADING LLC",
+        url: "https://play.google.com/store/apps/developer?id=ZMC+GENERAL+TRADING+LLC",
+        apps: [
+          ["ZMC Drive and Arrive", "https://play.google.com/store/apps/details?id=me.zmc.drivearrive"],
+          ["Zmc Customer", "https://play.google.com/store/apps/details?id=com.jiasaz.zmccustomers"],
+          ["ZMC Staff & Agents", "https://play.google.com/store/apps/details?id=com.jiasaz.zmc_staff"],
+          ["ZMC Shop", "https://play.google.com/store/apps/details?id=com.rentechdigital.swipecart.shop.zmciraq"],
+          ["ZMC Mersal Zayouna", "https://play.google.com/store/apps/details?id=com.zmc.dcmgmt"],
+          ["ZMC exchange point", "https://play.google.com/store/apps/details?id=me.zmc.ep"]
+        ]
+      }
+    ];
+
+    const storageKey = "portfolio-app-experience-v1";
+    const groupsElement = document.querySelector("#app-groups");
+    const search = document.querySelector("#search");
+    const counts = document.querySelector("#counts");
+    const empty = document.querySelector("#empty");
+    let selected = {};
+    let activeFilter = "all";
+
+    try {
+      selected = JSON.parse(localStorage.getItem(storageKey) || "{}");
+    } catch {
+      selected = {};
+    }
+
+    function makeRow(name, url) {
+      const appId = encodeURIComponent(url);
+      const row = document.createElement("div");
+      row.className = "app-row";
+      row.dataset.name = name.toLocaleLowerCase();
+      row.dataset.id = appId;
+
+      const link = document.createElement("a");
+      link.className = "app-name";
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = name;
+      row.append(link);
+
+      for (const [key, label, extraClass] of [["built", "Built", ""], ["worked", "Worked on", "worked"]]) {
+        const choice = document.createElement("label");
+        choice.className = `choice ${extraClass}`;
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = Boolean(selected[appId]?.[key]);
+        checkbox.setAttribute("aria-label", `${label}: ${name}`);
+        checkbox.addEventListener("change", () => {
+          selected[appId] = { ...selected[appId], [key]: checkbox.checked };
+          save();
+          update();
+        });
+        choice.append(checkbox, document.createTextNode(label));
+        row.append(choice);
+      }
+
+      return row;
+    }
+
+    for (const group of groups) {
+      const section = document.createElement("section");
+      section.className = "group";
+      const heading = document.createElement("div");
+      heading.className = "group-heading";
+      const title = document.createElement("h2");
+      title.textContent = group.name;
+      heading.append(title);
+      if (group.url) {
+        const source = document.createElement("a");
+        source.href = group.url;
+        source.target = "_blank";
+        source.rel = "noreferrer";
+        source.textContent = "Google Play listing ↗";
+        heading.append(source);
+      }
+      section.append(heading);
+
+      const labels = document.createElement("div");
+      labels.className = "column-labels";
+      labels.innerHTML = "<span>Application</span><span>Built</span><span>Worked on</span>";
+      section.append(labels);
+
+      for (const [name, url] of group.apps) section.append(makeRow(name, url));
+      groupsElement.append(section);
+    }
+
+    function save() {
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(selected));
+        document.querySelector("#save-note").textContent = "Saved in this browser";
+      } catch {
+        document.querySelector("#save-note").textContent = "Browser storage unavailable";
+      }
+    }
+
+    function update() {
+      let builtCount = 0;
+      let workedCount = 0;
+      for (const state of Object.values(selected)) {
+        if (state.built) builtCount++;
+        if (state.worked) workedCount++;
+      }
+      counts.textContent = `${builtCount} built · ${workedCount} worked on`;
+
+      const query = search.value.trim().toLocaleLowerCase();
+      let visibleRows = 0;
+      for (const row of document.querySelectorAll(".app-row")) {
+        const state = selected[row.dataset.id] || {};
+        const matchesText = row.dataset.name.includes(query);
+        const matchesFilter = activeFilter === "all" || state.built || state.worked;
+        row.hidden = !(matchesText && matchesFilter);
+        if (!row.hidden) visibleRows++;
+      }
+
+      for (const section of document.querySelectorAll(".group")) {
+        const hasVisibleRow = [...section.querySelectorAll(".app-row")].some(row => !row.hidden);
+        section.hidden = !hasVisibleRow;
+      }
+      empty.hidden = visibleRows !== 0;
+    }
+
+    search.addEventListener("input", update);
+    document.querySelectorAll(".filter").forEach(button => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+        document.querySelectorAll(".filter").forEach(filter => filter.setAttribute("aria-pressed", String(filter === button)));
+        update();
+      });
+    });
+    document.querySelector("#clear").addEventListener("click", () => {
+      selected = {};
+      document.querySelectorAll(".app-row input").forEach(checkbox => checkbox.checked = false);
+      save();
+      update();
+    });
+
+    update();
+  </script>
+</body>
+</html>
