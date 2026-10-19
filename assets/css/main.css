@@ -614,6 +614,96 @@ body {
   line-height: 1.5;
 }
 
+/* Clients
+--------------------------------------------------------------*/
+.clients__company {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 2rem 2.4rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-secondary);
+}
+
+.clients__company-label {
+  flex: 0 0 auto;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  color: var(--color-bg-primary);
+  font-size: 1.2rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.clients__company-text {
+  flex: 1 1 30rem;
+  margin: 0;
+  color: var(--color-text-light);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+}
+
+.clients__company-text strong {
+  color: var(--color-white);
+}
+
+.clients__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1.5rem;
+}
+
+.clients__card {
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: var(--transition);
+}
+
+.clients__card:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-0.4rem);
+}
+
+.clients__name {
+  margin-bottom: 0.6rem;
+  color: var(--color-white);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  overflow-wrap: anywhere;
+}
+
+.clients__focus {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 600px) {
+  .clients__company {
+    gap: 1rem;
+    padding: 1.6rem;
+  }
+
+  .clients__grid {
+    gap: 1rem;
+  }
+
+  .clients__card {
+    padding: 1.6rem;
+  }
+
+  .clients__name {
+    font-size: var(--fs-md);
+  }
+}
+
 .project-logo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));

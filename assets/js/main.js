@@ -126,6 +126,23 @@ sr.reveal(".qualification__item", {
   duration: 1000
 });
 
+// Clients section
+sr.reveal(".clients__company", {
+  origin: "top",
+  delay: 150,
+  distance: "40px",
+  duration: 900
+});
+
+sr.reveal(".clients__card", {
+  delay: 150,
+  interval: 80,
+  origin: "bottom",
+  distance: "40px",
+  scale: 0.95,
+  duration: 800
+});
+
 // Footer with elegant reveal
 sr.reveal(".footer__content", {
   delay: 200,
