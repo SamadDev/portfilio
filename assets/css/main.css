@@ -616,7 +616,7 @@ body {
 
 /* Clients
 --------------------------------------------------------------*/
-.clients__company {
+.companies__company {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -627,7 +627,7 @@ body {
   background-color: var(--color-bg-secondary);
 }
 
-.clients__company-label {
+.companies__company-label {
   flex: 0 0 auto;
   padding: 0.6rem 1.2rem;
   border: 1px solid var(--color-border);
@@ -639,7 +639,7 @@ body {
   text-transform: uppercase;
 }
 
-.clients__company-text {
+.companies__company-text {
   flex: 1 1 30rem;
   margin: 0;
   color: var(--color-text-light);
@@ -647,30 +647,30 @@ body {
   line-height: 1.6;
 }
 
-.clients__company-text strong {
+.companies__company-text strong {
   color: var(--color-white);
 }
 
-.clients__grid {
+.companies__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
   gap: 1.5rem;
 }
 
-.clients__card {
+.companies__card {
   padding: 2rem;
   border: 1px solid var(--color-border);
   background-color: rgba(255, 255, 255, 0.02);
   transition: var(--transition);
 }
 
-.clients__card:hover {
+.companies__card:hover {
   border-color: rgba(255, 255, 255, 0.35);
   background-color: rgba(255, 255, 255, 0.05);
   transform: translateY(-0.4rem);
 }
 
-.clients__name {
+.companies__name {
   margin-bottom: 0.6rem;
   color: var(--color-white);
   font-size: var(--fs-lg);
@@ -678,7 +678,7 @@ body {
   overflow-wrap: anywhere;
 }
 
-.clients__focus {
+.companies__focus {
   margin: 0;
   color: var(--color-text);
   font-size: var(--fs-sm);
@@ -686,20 +686,20 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .clients__company {
+  .companies__company {
     gap: 1rem;
     padding: 1.6rem;
   }
 
-  .clients__grid {
+  .companies__grid {
     gap: 1rem;
   }
 
-  .clients__card {
+  .companies__card {
     padding: 1.6rem;
   }
 
-  .clients__name {
+  .companies__name {
     font-size: var(--fs-md);
   }
 }
@@ -904,7 +904,7 @@ body {
 .project__content {
   width: 100%;
   max-width: 30rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3.5rem;
   padding: 1rem;
   justify-self: center;
   background-color: var(--color-bg-secondary);
@@ -931,19 +931,19 @@ body {
 
 .project__app-card {
   display: flex;
-  max-width: 28rem;
-  min-height: 21rem;
+  max-width: 25rem;
+  min-height: 17rem;
   flex-direction: column;
   margin-bottom: 0;
-  padding: 1.5rem;
+  padding: 1.2rem;
 }
 
 .project__app-image {
   order: 1;
-  width: calc(100% + 3rem);
+  width: calc(100% + 2.4rem);
   max-width: none;
-  height: 10rem;
-  margin: 1rem -1.5rem 1rem;
+  height: 7.5rem;
+  margin: 0.8rem -1.2rem;
   border-bottom: 1px solid var(--color-border);
   object-fit: cover;
 }
@@ -954,9 +954,9 @@ body {
 }
 
 .project__app-card .project__app-image--logo {
-  width: 7.2rem;
-  height: 7.2rem;
-  margin: 1rem auto;
+  width: 5.6rem;
+  height: 5.6rem;
+  margin: 0.8rem auto;
   border: 1px solid var(--color-border);
   border-radius: 0.8rem;
   background: var(--color-bg-tertiary);
@@ -976,9 +976,9 @@ body {
   inset: auto;
   order: 1;
   display: block;
-  width: 7.2rem;
-  height: 7.2rem;
-  margin: 1rem auto;
+  width: 5.6rem;
+  height: 5.6rem;
+  margin: 0.8rem auto;
   border: 1px solid var(--color-border);
   border-radius: 0.8rem;
   background: var(--color-bg-tertiary);
@@ -987,9 +987,9 @@ body {
 
 .project__app-card > .zstack {
   order: 1;
-  width: calc(100% + 3rem);
-  height: 10rem;
-  margin: 1rem -1.5rem;
+  width: calc(100% + 2.4rem);
+  height: 7.5rem;
+  margin: 0.8rem -1.2rem;
   overflow: hidden;
 }
 
@@ -1015,9 +1015,9 @@ body {
 
 .project__app-card > .zstack {
   order: 1;
-  width: calc(100% + 3rem);
-  height: 10rem;
-  margin: 1rem -1.5rem;
+  width: calc(100% + 2.4rem);
+  height: 7.5rem;
+  margin: 0.8rem -1.2rem;
   overflow: hidden;
 }
 
@@ -1052,7 +1052,8 @@ body {
 
 .project__app-card .project__title {
   order: 2;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
+  font-size: 1.7rem;
 }
 
 .project__app-role {
@@ -1085,10 +1086,15 @@ body {
 .project__app-card .project__description,
 .project__app-description {
   order: 4;
-  margin: 0.2rem 0 0;
+  margin: 0.4rem 0 0;
   color: var(--color-text-light);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .project__app-card.is-hidden {
@@ -1157,7 +1163,7 @@ body {
   align-items: center;
   gap: 0.6rem;
   margin-top: auto;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   color: var(--color-primary-light);
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
@@ -2088,5 +2094,101 @@ body::after {
   .skill--box:hover {
     animation: none;
     transform: translateY(-2px) !important;
+  }
+}
+
+/* Project card hover popup
+--------------------------------------------------------------*/
+.project-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--zindex-fixed);
+  width: 30rem;
+  max-width: calc(100vw - 2.4rem);
+  padding: 1.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1.6rem;
+  background: rgba(17, 17, 17, 0.92);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--box-shadow-xl), var(--glow-primary);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1rem) scale(0.92);
+  transform-origin: 50% 100%;
+  transition: opacity 0.28s ease, transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.project-popup.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-popup__head {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.project-popup__icon {
+  width: 5.6rem;
+  height: 5.6rem;
+  flex: 0 0 auto;
+  padding: 0.3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: var(--color-bg-tertiary);
+  object-fit: contain;
+}
+
+.project-popup__head-text {
+  display: grid;
+  justify-items: start;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.project-popup__mark {
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  background: var(--color-white);
+  color: var(--color-bg-primary);
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-popup__title {
+  margin: 0;
+  color: var(--color-white);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  overflow-wrap: anywhere;
+}
+
+.project-popup__meta {
+  margin: 1rem 0 0;
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+}
+
+.project-popup__description {
+  margin: 0.8rem 0 0;
+  color: var(--color-text-light);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+@media (hover: none) {
+  .project-popup {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-popup {
+    transition: none;
   }
 }

@@ -127,14 +127,14 @@ sr.reveal(".qualification__item", {
 });
 
 // Clients section
-sr.reveal(".clients__company", {
+sr.reveal(".companies__company", {
   origin: "top",
   delay: 150,
   distance: "40px",
   duration: 900
 });
 
-sr.reveal(".clients__card", {
+sr.reveal(".companies__card", {
   delay: 150,
   interval: 80,
   origin: "bottom",
@@ -343,3 +343,124 @@ showMoreCard?.addEventListener('click', () => {
 
 updateProjectCardVisibility();
 window.addEventListener('resize', updateProjectCardVisibility);
+
+// Hover preview popup for project cards.
+// Resting the cursor on a card for a moment opens a small popup with the
+// app icon, role, downloads/publisher, and the full description.
+// Only runs on devices with a real hover-capable pointer.
+(() => {
+  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!supportsHover || !projectCards.length) return;
+
+  const popup = document.createElement('div');
+  popup.className = 'project-popup';
+  popup.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(popup);
+
+  const SHOW_DELAY_MS = 300;
+  let showTimer = null;
+  let activeCard = null;
+
+  const hidePopup = () => {
+    window.clearTimeout(showTimer);
+    showTimer = null;
+    activeCard = null;
+    popup.classList.remove('is-visible');
+  };
+
+  const buildPopup = (card) => {
+    const title = card.querySelector('.project__title')?.textContent.trim();
+    if (!title) return false;
+
+    const icon = card.querySelector('.project__app-image--logo, .zstack .project__icon, .project__icon, .project__img');
+    const role = card.querySelector('.project__app-mark span')?.textContent.trim() || '';
+    const downloads = card.querySelector('.project__app-downloads')?.textContent.trim() || '';
+    const publisher = card.querySelector('.project__app-publisher')?.textContent.trim() || '';
+    const description = card.querySelector('.project__app-description, .project__description')?.textContent.trim() || '';
+
+    popup.replaceChildren();
+
+    const head = document.createElement('div');
+    head.className = 'project-popup__head';
+
+    if (icon && (icon.currentSrc || icon.src)) {
+      const img = document.createElement('img');
+      img.className = 'project-popup__icon';
+      img.src = icon.currentSrc || icon.src;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      head.appendChild(img);
+    }
+
+    const headText = document.createElement('div');
+    headText.className = 'project-popup__head-text';
+
+    if (role) {
+      const mark = document.createElement('span');
+      mark.className = 'project-popup__mark';
+      mark.textContent = role;
+      headText.appendChild(mark);
+    }
+
+    const name = document.createElement('h4');
+    name.className = 'project-popup__title';
+    name.textContent = title;
+    headText.appendChild(name);
+    head.appendChild(headText);
+    popup.appendChild(head);
+
+    const metaParts = [downloads, publisher].filter(Boolean);
+    if (metaParts.length) {
+      const meta = document.createElement('p');
+      meta.className = 'project-popup__meta';
+      meta.textContent = metaParts.join(' · ');
+      popup.appendChild(meta);
+    }
+
+    if (description) {
+      const desc = document.createElement('p');
+      desc.className = 'project-popup__description';
+      desc.textContent = description;
+      popup.appendChild(desc);
+    }
+
+    return true;
+  };
+
+  const positionPopup = (card) => {
+    const rect = card.getBoundingClientRect();
+    const popWidth = popup.offsetWidth;
+    const popHeight = popup.offsetHeight;
+
+    let left = rect.left + rect.width / 2 - popWidth / 2;
+    left = Math.min(Math.max(12, left), window.innerWidth - popWidth - 12);
+
+    let top = rect.top - popHeight - 14;
+    if (top < 12) {
+      top = Math.min(rect.bottom + 14, window.innerHeight - popHeight - 12);
+    }
+
+    popup.style.left = `${left}px`;
+    popup.style.top = `${top}px`;
+  };
+
+  for (const card of projectCards) {
+    card.addEventListener('mouseenter', () => {
+      window.clearTimeout(showTimer);
+      hidePopup();
+      activeCard = card;
+      showTimer = window.setTimeout(() => {
+        if (activeCard !== card || !card.matches(':hover')) return;
+        if (!buildPopup(card)) return;
+        positionPopup(card);
+        popup.classList.add('is-visible');
+      }, SHOW_DELAY_MS);
+    });
+
+    card.addEventListener('mouseleave', hidePopup);
+  }
+
+  window.addEventListener('scroll', hidePopup, { passive: true });
+  window.addEventListener('resize', hidePopup);
+})();
