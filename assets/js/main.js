@@ -126,14 +126,7 @@ sr.reveal(".qualification__item", {
   duration: 1000
 });
 
-// Clients section
-sr.reveal(".companies__company", {
-  origin: "top",
-  delay: 150,
-  distance: "40px",
-  duration: 900
-});
-
+// Companies section
 sr.reveal(".companies__card", {
   delay: 150,
   interval: 80,

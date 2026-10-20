@@ -614,43 +614,8 @@ body {
   line-height: 1.5;
 }
 
-/* Clients
+/* Companies
 --------------------------------------------------------------*/
-.companies__company {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  padding: 2rem 2.4rem;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg-secondary);
-}
-
-.companies__company-label {
-  flex: 0 0 auto;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-white);
-  color: var(--color-bg-primary);
-  font-size: 1.2rem;
-  font-weight: var(--fw-bold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.companies__company-text {
-  flex: 1 1 30rem;
-  margin: 0;
-  color: var(--color-text-light);
-  font-size: var(--fs-md);
-  line-height: 1.6;
-}
-
-.companies__company-text strong {
-  color: var(--color-white);
-}
-
 .companies__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
@@ -686,11 +651,6 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .companies__company {
-    gap: 1rem;
-    padding: 1.6rem;
-  }
-
   .companies__grid {
     gap: 1rem;
   }
