@@ -126,16 +126,6 @@ sr.reveal(".qualification__item", {
   duration: 1000
 });
 
-// Companies section
-sr.reveal(".companies__card", {
-  delay: 150,
-  interval: 80,
-  origin: "bottom",
-  distance: "40px",
-  scale: 0.95,
-  duration: 800
-});
-
 // Footer with elegant reveal
 sr.reveal(".footer__content", {
   delay: 200,
@@ -281,19 +271,22 @@ let projectCardsExpanded = false;
 if (projectLogoGrid) {
   for (const card of projectCards) {
     const role = card.querySelector('.project__app-mark span')?.textContent.trim();
-    if (!['Built', 'Worked on', 'Published'].includes(role)) continue;
+    if (!role) continue;
 
     const title = card.querySelector('.project__title')?.textContent.trim();
     const image = card.querySelector('.project__app-image--logo, .project__icon');
     const storeLink = card.querySelector('a.project__app-link[href*="play.google.com/store/apps/details?id="]');
     if (!title || !image || !storeLink) continue;
 
+    const company = card.dataset.company || '';
+    const focus = card.dataset.focus || '';
+
     const link = document.createElement('a');
     link.className = 'project-logo-link';
     link.href = storeLink.href;
     link.target = '_blank';
     link.rel = 'noreferrer';
-    link.setAttribute('aria-label', `${title}, ${role}`);
+    link.setAttribute('aria-label', [title, company, role].filter(Boolean).join(', '));
 
     const logo = document.createElement('img');
     logo.src = image.currentSrc || image.src;
@@ -305,12 +298,35 @@ if (projectLogoGrid) {
     text.className = 'project-logo__text';
     const name = document.createElement('strong');
     name.textContent = title;
+    text.append(name);
+    if (company) {
+      const companyName = document.createElement('em');
+      companyName.className = 'project-logo__company';
+      companyName.textContent = company;
+      text.append(companyName);
+    }
     const contribution = document.createElement('small');
     contribution.textContent = role;
-    text.append(name, contribution);
+    text.append(contribution);
+    if (focus) {
+      const focusText = document.createElement('span');
+      focusText.className = 'project-logo__focus';
+      focusText.textContent = focus;
+      text.append(focusText);
+    }
     link.append(logo, text);
     projectLogoGrid.append(link);
   }
+
+  // Apps logo grid reveal (runs after the grid items are created).
+  sr.reveal(".project-logo-link", {
+    delay: 150,
+    interval: 80,
+    origin: "bottom",
+    distance: "40px",
+    scale: 0.95,
+    duration: 800
+  });
 }
 
 function updateProjectCardVisibility() {
@@ -400,6 +416,14 @@ window.addEventListener('resize', updateProjectCardVisibility);
     name.className = 'project-popup__title';
     name.textContent = title;
     headText.appendChild(name);
+
+    const company = card.dataset.company || '';
+    if (company) {
+      const companyName = document.createElement('span');
+      companyName.className = 'project-popup__company';
+      companyName.textContent = company;
+      headText.appendChild(companyName);
+    }
     head.appendChild(headText);
     popup.appendChild(head);
 
