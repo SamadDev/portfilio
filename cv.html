@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samad Shukr — CV | Senior Flutter Mobile Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root{--ff-body:"Space Grotesk",sans-serif;--color-bg:#050505;--color-bg-secondary:#111111;--color-text:#a5a5a5;--color-text-light:#e5e5e5;--color-white:#ffffff;--color-accent:#bdbdbd;--color-border:#303030;--fs-sm:1.3rem;--fs-md:1.5rem}
+        *{box-sizing:border-box;margin:0;padding:0}html{font-size:62.5%}
+        body{font-family:var(--ff-body);font-size:var(--fs-md);line-height:1.6;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+        .container{max-width:900px;margin:0 auto;padding:0 4rem}
+        .cv-header{padding:4rem 0 2rem;border-bottom:1px solid var(--color-border);margin-bottom:3rem}
+        .cv-name{font-size:4rem;font-weight:700;color:var(--color-white);letter-spacing:-0.5px;line-height:1.1;margin-bottom:0.5rem}
+        .cv-name mark{background:transparent;color:inherit}
+        .cv-role{font-size:1.8rem;font-weight:500;color:var(--color-accent);margin-bottom:1.2rem}
+        .cv-contact{display:flex;flex-wrap:wrap;gap:1.2rem 2rem;font-size:var(--fs-sm);color:var(--color-text)}
+        .cv-contact .sep{color:var(--color-border)}
+        .cv-contact a{color:var(--color-text-light);text-decoration:none;border-bottom:1px solid transparent}
+        .cv-contact a:hover{border-bottom-color:var(--color-accent);color:var(--color-white)}
+        section{margin-bottom:3rem}
+        .section-head{display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem}
+        .section-head i{color:var(--color-accent);font-size:1.6rem}
+        .section-head h2{font-size:1.7rem;font-weight:600;color:var(--color-white);text-transform:uppercase;letter-spacing:.5px}
+        .section-head span{font-size:var(--fs-sm);color:var(--color-accent);font-weight:500}
+        .summary{font-size:1.5rem;color:var(--color-text);max-width:72ch}
+        .summary strong{color:var(--color-white)}
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+        .skill-chip{background:var(--color-bg-secondary);border:1px solid var(--color-border);padding:.8rem 1rem;border-radius:.4rem;font-size:1.4rem;font-weight:500;color:var(--color-text-light);text-align:center}
+        .skill-cat{font-size:var(--fs-sm);font-weight:600;color:var(--color-accent);text-transform:uppercase;letter-spacing:.4px;margin-bottom:.8rem;display:block}
+        .timeline{position:relative;padding-left:1.6rem}
+        .timeline::before{content:"";position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:var(--color-border)}
+        .tl-item{position:relative;margin-bottom:2.4rem;padding-left:.6rem}
+        .tl-item::before{content:"";position:absolute;left:-1.1rem;top:.2rem;width:1rem;height:1rem;border:2px solid var(--color-accent);background:var(--color-bg);border-radius:50%;z-index:1}
+        .tl-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem;flex-wrap:wrap;gap:.4rem}
+        .tl-title{font-size:1.5rem;font-weight:600;color:var(--color-white)}
+        .tl-org{font-size:1.4rem;font-weight:500;color:var(--color-accent)}
+        .tl-date{font-size:var(--fs-sm);color:var(--color-text);white-space:nowrap}
+        .tl-desc{font-size:1.4rem;color:var(--color-text)}
+        .edu-item{margin-bottom:2rem}
+        .edu-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem}
+        .edu-title{font-size:1.5rem;font-weight:600;color:var(--color-white)}
+        .edu-date{font-size:var(--fs-sm);color:var(--color-text)}
+        .apps-intro{font-size:1.5rem;color:var(--color-text);margin-bottom:1.8rem;max-width:70ch}
+        .apps-intro strong{color:var(--color-white)}
+        .apps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+        .app-card{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:.6rem;padding:1.2rem;font-size:1.3rem}
+        .app-title{font-weight:600;color:var(--color-white);margin-bottom:.3rem}
+        .app-pub{font-size:1.15rem;color:var(--color-accent);margin-bottom:.6rem;display:block}
+        .app-stores{display:flex;gap:.5rem}
+        .store-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:1.05rem;padding:.25rem .6rem;border-radius:999px;border:1px solid var(--color-border);color:var(--color-text);background:var(--color-bg)}
+        .store-pill i{font-size:1.1rem;color:var(--color-accent)}
+        .store-pill.play{border-color:#2ea447;color:#2ea447;background:rgba(46,164,71,.1)}
+        .store-pill.play i{color:#2ea447}
+        .store-pill.apple{border-color:#000;color:#000;background:#f5f5f5}
+        .store-pill.apple i{color:#000}
+        .apps-note{margin-top:1.4rem;font-size:var(--fs-sm);color:var(--color-text)}
+        .cv-footer{border-top:1px solid var(--color-border);padding-top:2rem;font-size:var(--fs-sm);color:var(--color-text);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="cv-header">
+            <h1 class="cv-name">Samad <mark>Shukr</mark></h1>
+            <div class="cv-role">Senior Flutter Mobile Developer <span style="color:var(--color-text);font-weight:400;font-size:1.4rem;"> / Full-Stack Engineer</span></div>
+            <div class="cv-contact">
+                <span><i class="ri-map-pin-line" style="color:var(--color-accent);"></i> Erbil, Iraq</span>
+                <span class="sep">·</span>
+                <a href="mailto:samad.00293265@gmail.com"><i class="ri-mail-line" style="color:var(--color-accent);"></i> samad.00293265@gmail.com</a>
+                <span class="sep">·</span>
+                <a href="https://wa.me/9647507858839"><i class="ri-phone-line" style="color:var(--color-accent);"></i> (964) 750 785 88 39</a>
+                <span class="sep">·</span>
+                <a href="https://linkedin.com/in/samad-shukr-34a7491aa" target="_blank"><i class="ri-linkedin-fill" style="color:var(--color-accent);"></i> linkedin.com/in/samad-shukr-34a7491aa</a>
+                <span class="sep">·</span>
+                <a href="https://github.com/SamadDev" target="_blank"><i class="ri-github-fill" style="color:var(--color-accent);"></i> github.com/SamadDev</a>
+            </div>
+        </header>
+        <section>
+            <div class="section-head"><i class="ri-user-line"></i><h2>Profile</h2></div>
+            <p class="summary">Mobile developer since 2020 with <strong>6+ years in mobile development</strong>. Senior Flutter Mobile Developer and Full-Stack Engineer experienced in Node.js, Express.js, Laravel, Vue.js, MongoDB, and Firebase. I have <strong>built or contributed to 20+ published mobile applications</strong> on Google Play and the Apple App Store, collaborating with publishers such as Jiasaz Company, Smart Vision IQ, Dwrandaz, and Kardokh Hussein.</p>
+        </section>
+        <section>
+            <div class="section-head"><i class="ri-code-line"></i><h2>Skills</h2></div>
+            <span class="skill-cat">Mobile</span>
+            <div class="skills-grid">
+                <span class="skill-chip">Flutter</span>
+                <span class="skill-chip">Dart</span>
+            </div>
+            <span class="skill-cat">Backend</span>
+            <div class="skills-grid">
+                <span class="skill-chip">Node.js</span>
+                <span class="skill-chip">Express.js</span>
+                <span class="skill-chip">Laravel</span>
+                <span class="skill-chip">Mongoose</span>
+            </div>
+            <span class="skill-cat">Database</span>
+            <div class="skills-grid">
+                <span class="skill-chip">MongoDB</span>
+                <span class="skill-chip">Firebase</span>
+            </div>
+            <span class="skill-cat">Frontend</span>
+            <div class="skills-grid">
+                <span class="skill-chip">Vue.js</span>
+                <span class="skill-chip">HTML5</span>
+            </div>
+            <span class="skill-cat">Tools &amp; Platforms</span>
+            <div class="skills-grid">
+                <span class="skill-chip">Git</span>
+                <span class="skill-chip">Google Play Console</span>
+                <span class="skill-chip">Apple App Store Connect</span>
+            </div>
+        </section>
+        <section>
+            <div class="section-head"><i class="ri-briefcase-fill"></i><h2>Experience</h2></div>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-head">
+                        <span class="tl-title">Mobile Application Developer</span>
+                        <span class="tl-date">Dec 2022 – Present</span>
+                    </div>
+                    <div class="tl-org">Jiasaz Company — Erbil, Iraq</div>
+                    <p class="tl-desc">Developing Flutter mobile applications for a range of Iraqi businesses across logistics, pharma, and e-commerce.</p>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-head">
+                        <span class="tl-title">Mobile Application Developer (Remote, Part-time)</span>
+                        <span class="tl-date">Feb 2024 – Jul 2026</span>
+                    </div>
+                    <div class="tl-org">Dotteck — Remote</div>
+                    <p class="tl-desc">Building mobile applications remotely on a part-time basis.</p>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-head">
+                        <span class="tl-title">IT &amp; Mobile Developer</span>
+                        <span class="tl-date">Jun 2021 – Oct 2021</span>
+                    </div>
+                    <div class="tl-org">Iraq</div>
+                    <p class="tl-desc">Provided IT support, managed the company website, and developed its mobile application.</p>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-head">
+                        <span class="tl-title">Mobile Application Developer (Internship)</span>
+                        <span class="tl-date">Jul 2020 – Oct 2020</span>
+                    </div>
+                    <div class="tl-org">Iraq</div>
+                    <p class="tl-desc">Completed a Flutter developer internship, contributing to mobile application development.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-head"><i class="ri-booklet-fill"></i><h2>Education</h2></div>
+            <div class="edu-item">
+                <div class="edu-head">
+                    <span class="edu-title">Software Engineer</span>
+                    <span class="edu-date">2017 – 2021</span>
+                </div>
+                <p style="font-size:1.4rem;color:var(--color-text);">Software engineering studies.</p>
+            </div>
+        </section>
+        <section>
+            <div class="section-head"><i class="ri-store-line"></i><h2>Published Apps</h2></div>
+            <p class="apps-intro"><strong>20+ apps</strong> published on Google Play and the Apple App Store — built, contributed to, or released for the publishers listed below.</p>
+            <h3 style="font-size:1.5rem;font-weight:600;color:var(--color-white);margin:1.6rem 0 0.8rem;">Built</h3>
+            <div class="apps-grid">
+                <div class="app-card"><div class="app-title">Eagle Express</div><span class="app-pub">Eagle Express Iraq</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span><span class="store-pill apple"><i class="ri-apple-fill"></i> App Store</span></div></div>
+                <div class="app-card"><div class="app-title">Rasalmal</div><span class="app-pub">Smart Vision IQ</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span><span class="store-pill apple"><i class="ri-apple-fill"></i> App Store</span></div></div>
+                <div class="app-card"><div class="app-title">Medical Sale</div><span class="app-pub">—</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span><span class="store-pill apple"><i class="ri-apple-fill"></i> App Store</span></div></div>
+                <div class="app-card"><div class="app-title">Kal Co</div><span class="app-pub">Kal Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span><span class="store-pill apple"><i class="ri-apple-fill"></i> App Store</span></div></div>
+                <div class="app-card"><div class="app-title">Mihan Jobseeker</div><span class="app-pub">Dwrandaz</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span><span class="store-pill apple"><i class="ri-apple-fill"></i> App Store</span></div></div>
+                <div class="app-card"><div class="app-title">Wallpy</div><span class="app-pub">—</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Box Cargo</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Dalen Logistics</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">AKQ Logistic</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Wadian alharir</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Alamoodac</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Golden Speed</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">IBS Cargo</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Master Cargo</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+            </div>
+
+            <h3 style="font-size:1.5rem;font-weight:600;color:var(--color-white);margin:1.6rem 0 0.8rem;">Worked On</h3>
+            <div class="apps-grid">
+                <div class="app-card"><div class="app-title">Active Pharma</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Middleton Field</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Doctor Pharma (DPH)</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Vera Health</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Arch Star</div><span class="app-pub">Jiasaz Company</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+            </div>
+            <h3 style="font-size:1.5rem;font-weight:600;color:var(--color-white);margin:1.6rem 0 0.8rem;">Published</h3>
+            <div class="apps-grid">
+                <div class="app-card"><div class="app-title">Oneteam HRIS</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Mr.Logistic</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Beginner Co</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Amool</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">DOTHawala</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Bana Co</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Ams Co</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Asna</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+                <div class="app-card"><div class="app-title">Shkar Co</div><span class="app-pub">Kardokh Hussein</span><div class="app-stores"><span class="store-pill play"><i class="ri-google-play-fill"></i> Play</span></div></div>
+            </div>
+            <p class="apps-note">Futian and London Glass are also among the published releases on Google Play and the App Store. Full list with store links available on my portfolio.</p>
+        </section>
+        <footer class="cv-footer">
+            <div>Samad Shukr — CV</div>
+            <div>samad.00293265@gmail.com &nbsp;|&nbsp; (964) 750 785 88 39</div>
+        </footer>
+    </div>
+</body>
+</html>
+
